@@ -1,0 +1,39 @@
+{
+  "name": "microcms-next-jamstack-blog",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev && npm run watch",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "clean": "rimraf .next/cache node_modules/.cache css/main.css",
+    "watch": "npx gulp"
+  },
+  "dependencies": {
+    "@types/nodemailer": "^6.4.17",
+    "chat.js": "^1.0.2",
+    "fs": "^0.0.1-security",
+    "html-react-parser": "^5.0.6",
+    "microcms-js-sdk": "^2.7.0",
+    "next": "14.0.3",
+    "nodemailer": "^6.9.16",
+    "react": "^18",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18"
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.0.1",
+    "browser-sync": "^3.0.3",
+    "eslint": "^8",
+    "eslint-config-next": "14.0.3",
+    "gulp": "^5.0.0",
+    "gulp-cli": "^3.0.0",
+    "gulp-notify": "^5.0.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-sass": "^6.0.0",
+    "postcss": "^8",
+    "sass": "^1.81.0",
+    "tailwindcss": "^3.3.0"
+  }
+}

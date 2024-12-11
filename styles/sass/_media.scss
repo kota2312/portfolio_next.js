@@ -1,0 +1,43 @@
+@use './config/_var' as *;
+@use './config/_mixin' as *;
+@use './config/_function' as *;
+
+.bl_media {
+    display: flex;
+    align-items: center;
+    box-shadow: 16px 16px 35px rgba(0, 0, 0, .25);
+    padding: pxToRem(30);
+    background-color: $c_white;
+
+    &_body {
+        flex: 1;
+    
+        &*:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &_ttl {
+        margin-bottom: 10px;
+        font-size: pxToRem(18);
+        font-weight: 600;
+    }
+}
+
+.bl_media_imgWrapper {
+    flex: 0 1 27.58333%;
+    margin-right: 3.3333%;
+    &_img {
+        width: 100%;
+    }
+}
+
+@include MQ(m) {
+    .bl_media {
+        display: block;
+    }
+    .bl_media_imgWrapper {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+}
+

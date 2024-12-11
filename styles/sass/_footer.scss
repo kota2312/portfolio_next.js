@@ -1,0 +1,76 @@
+@use './config/_var' as *;
+@use './config/_mixin' as *;
+@use './config/_function' as *;
+
+/* footer ウィジェット */
+.ly_footer {
+    color: $c_white;
+    padding: 55px 0;
+    background: $c_black;
+}
+
+.bl_footer_cont {
+    display: flex;
+    justify-content: space-between;
+}
+
+.bl_footer_info {
+    &_logo {
+        display: block;
+    }
+}
+
+.bl_footer_nav {
+    font-size: pxToRem(16);
+    line-height: 1;
+    display: flex;
+
+    &_list {
+        position: relative;
+    }
+    &_titlle {
+        padding-left: 1.5em;
+    }
+    &_item {
+        padding-left: 1.5em;
+        padding-top: 10px;
+        > a{
+            line-height: 1.8;
+            color: #FFF;
+            text-decoration: none;
+        }
+    }
+}
+
+@include MQ(m) {
+    .ly_footer {
+        padding-top: 25px;
+    }
+    .bl_footer_cont {
+        flex-direction: column;
+    }
+    .bl_footer_nav {
+        display: block;
+        font-size: pxToRem(16);
+        padding: 30px 0px;
+    
+        &_list {
+            display: block;
+            font-size: pxToRem(16);
+            margin-top: 3em;
+            border-bottom: solid 1px #fff;
+            padding-bottom: 10px;
+        }
+        &_titlle {
+            padding-left: 0;
+        }
+        &_item {
+            padding-left: 0;
+            > a{
+                line-height: 1.8;
+                color: #FFF;
+                text-decoration: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,253 @@
+@use './config/_mixin' as *;
+@use './config/_var' as *;
+@use './config/_function' as *;
+
+.ly_mainVisual_inner {
+  display: flex;
+  height: min(870 / 1920 * (100vw), 937px);
+  position: relative;
+  .en {
+    font-family: $ff_en;
+  }
+  @include MQ(l) {
+    height: min(630 / 1560 * (100vw), 630px);
+  }
+  @include MQ('m') {
+    flex-direction: column;
+    height: auto;
+  }
+}
+
+.bl_mainVisual_left {
+  position: absolute;
+  box-shadow: 16px 16px 35px rgba(0, 0, 0, 0.25);
+  border-radius: 20px 80px/80px 30px;
+  padding-top: min(75 / 1920 * (100vw), pxToRem(75));
+  padding-right: min(70 / 1920 * (100vw), pxToRem(70));
+  padding-bottom: min(70 / 1920 * (100vw), pxToRem(70));
+  padding-left: min(75 / 1920 * (100vw), pxToRem(75));
+  right: 0;
+  left: 0;
+  height: min(870 / 1920 * (100vw), 937px);
+  margin: 0 auto;
+  z-index: 99999;
+  max-width: min(1000 / 1920 * (100vw), pxToRem(1000));
+  text-align: center;
+  background-color: $c_black;
+  opacity: 0.9;
+  @include MQ(l) {
+    height: min(630 / 1560 * (100vw), 630px);
+  }
+  @include MQ('m') {
+    position: relative;
+    padding: 40px 30px 45px;
+    margin: 0 auto;
+    max-width: initial;
+    height: auto;
+  }
+  /*
+  &::before {
+    position: absolute;
+    display: block;
+    width: min(300 / 1920 * (100vw), pxToRem(300));
+    height: min(3000 / 1920 * (100vw), pxToRem(300));
+    content: '';
+    background: url(#{$scroll_devil}) no-repeat 100% / contain;
+  }
+  */
+}
+
+.bl_mainVisual_contents {
+  .bl_mainVisual_heading {
+    color: $c_white;
+    @include MQ(l) {
+      font-size: min(70 / 1560 * (100vw), pxToRem(70));
+    }
+    @include MQ('m') {
+      font-size: pxToRem(36);
+    }
+    font-size: min(100 / 1920 * (100vw), pxToRem(100));
+    font-weight: 600;
+    line-height: 1.15;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 1s forwards;
+    animation-delay: 0.5s;
+    span {
+      padding-top: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s forwards;
+      animation-delay: 1s;
+      &:first-of-type {
+        display: block;
+        font-size: min(100 / 1920 * (100vw), pxToRem(100));
+        font-weight: 600;
+        line-height: 1;
+        color: $c_red_1;
+        @include MQ(l) {
+          font-size: min(80 / 1560 * (100vw), pxToRem(80));
+        }
+        @include MQ('m') {
+          font-size: pxToRem(70);
+        }
+      }
+      &:last-of-type {
+        display: block;
+        font-size: min(44 / 1920 * (100vw), pxToRem(44));
+        font-weight: 600;
+        line-height: 1;
+        color: $c_red_1;
+        text-align: center;
+        letter-spacing: 0.11em;
+        @include MQ(l) {
+          font-size: min(30 / 1560 * (100vw), pxToRem(30));
+        }
+        @include MQ('m') {
+          font-size: pxToRem(28);
+        }
+      }
+    }
+  }
+}
+
+.el_mainVisual_scrolldown {
+  color: $c_white;
+  padding-top: min(120px, calc(80 / 1920 * 100vw));
+  font-weight: 500;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards; /* ページ読み込み時のアニメーションを適用 */
+  animation-delay: 3.2s; /* motion01の秒数(1.2秒) + 指定の遅延時間（1.5秒） */
+  span {
+    position: relative;
+    padding-left: 2em;
+    font-size: min(32 / 1920 * (100vw), pxToRem(32));
+    letter-spacing: 0.05em;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 7px;
+      display: block;
+      width: min(40 / 1920 * (100vw), pxToRem(40));
+      height: min(40 / 1920 * (100vw), pxToRem(40));
+      content: '';
+      background: url(#{$scroll_allow}) no-repeat 100% / contain;
+      border-radius: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  @include MQ('m') {
+    display: none;
+  }
+}
+
+/* --------
+
+slider animation
+
+----------*/
+
+.bl_mainVisual_right {
+  position: relative;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-flow: row nowrap;
+  flex-flow: row nowrap;
+  width: 100vw;
+  overflow: hidden;
+  opacity: 0;
+  transform: scale(0.9);
+  animation: fadeInScale 1.2s forwards;
+  animation-delay: 1.2s;
+  @include MQ('m') {
+    height: auto;
+  }
+
+  .bl_mainVisual_animate_wrapper {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    padding: 0;
+    margin: 0;
+    transition: transform 1s ease-in-out; /* スライドアニメーションのスムーズな移動 */
+    transform: translateX(0); /* スライダーの初期位置を調整 */
+    &:first-child {
+      animation: loop 50s -25s linear infinite;
+      backface-visibility: hidden;
+      will-change: transform;
+    }
+    &:last-child {
+      animation: loop2 50s linear infinite;
+    }
+
+    .bl_mainVisual_animate_slide {
+      display: inline-block;
+      width: min(700 / 1920 * (100vw), 700px);
+      min-width: 280px;
+      max-width: 700px;
+      margin: 0 5px 0 0;
+      text-align: center;
+      list-style: none;
+      @include MQ('m') {
+        min-height: auto;
+      }
+      figure {
+        width: 100%;
+        height: 100%;
+      }
+      img {
+        width: 100%;
+        height: 100%; /* 親の高さに合わせて画像を調整 */
+        object-fit: cover; /* 画像がコンテナを覆うようにする */
+        @include MQ('m') {
+          min-height: auto;
+        }
+      }
+    }
+  }
+}
+
+@keyframes loop {
+  0% {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes loop2 {
+  0% {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-200%);
+  }
+}
+
+/* --------
+
+other animation
+
+----------*/
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

@@ -1,0 +1,48 @@
+@use './config/_mixin' as *;
+@use './config/_var' as *;
+@use './config/_function' as *;
+
+//tabのCSS
+.bl_tabNav_inner {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.bl_tabNav_link {
+    display: inline-block;
+    padding-right: 30px;
+    padding-bottom: 10px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    border-bottom: 4px solid $c_gray_1;
+    color: $c_gray_2;
+    text-decoration: none;
+    transition: .25;
+    @include FH() {
+        border-bottom-color: $c_red_1;
+        color: $c_red_1;
+        transition: .75;
+    }
+}
+
+.bl_tabNav_link.is_active {
+    border-bottom-color: $c_red_1;
+    color: $c_red_1;
+    pointer-events: none;
+}
+
+
+@include MQ(m) {
+    .bl_tabNav {
+        overflow-x: auto;
+        .bl_tabNav_inner {
+            flex-wrap: nowrap;
+            justify-content: center;
+            margin-bottom: 0;
+            white-space: nowrap;
+        }
+    }
+}

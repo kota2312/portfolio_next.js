@@ -1,0 +1,41 @@
+
+@use './config/_mixin' as *;
+@use './config/_var' as *;
+@use './config/_function' as *;
+
+
+//カードレイアウト
+.bl_blog_card_list {
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    gap: 20px;
+
+    .bl_blog_card_item {
+        box-shadow: 16px 16px 35px rgba(0, 0, 0, .25);
+    }
+}
+
+//カード内
+.bl_blog_card_body {
+    padding: pxToRem(15);
+    .bl_blog_card_date {
+        color: $c_gray_2;
+    }
+    .bl_blog_card_title {
+        font-weight: 600;
+        color: $c_black;
+        text-decoration: none;
+        @include FH() {
+            text-decoration: underline;
+            color: $c_red_1;
+        }
+    }
+    .bl_blog_card_description {
+        font-size: pxToRem(14);
+    }
+}
+
+//一覧ボタン
+.el_btn__blog {
+    margin: 50px auto;
+}
