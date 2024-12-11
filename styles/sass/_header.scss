@@ -1,0 +1,30 @@
+@use './config/_mixin' as *;
+@use './config/_var' as *;
+@use './config/_function' as *;
+
+
+.ly_header {
+    @include contentCentering();
+    &_inner {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        padding: min(35 / 1440 * (100vw), pxToRem(35));
+    }
+}
+
+.bl_header_logo {
+    width: 250px;
+}
+
+.bl_header_nav {
+    align-items: center;
+    display: flex;
+    gap: min(50 / 1440 * (100vw), pxToRem(50));
+
+    &_list_txt {
+        align-items: center;
+        display: flex;
+        gap: min(20 / 1440 * (100vw), pxToRem(20));
+    }
+}

@@ -1,0 +1,78 @@
+@use './config/_var' as *;
+@use './config/_mixin' as *;
+@use './config/_function' as *;
+
+.ly_contact_cont {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.bl_contact_form {
+
+}
+
+.bl_contact {
+    &_columns_1 {
+        margin-top: 40px;
+    }
+    &_columns_2 {
+        grid-column-gap: 20px;
+        grid-row-gap: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 1fr;
+        margin-top: 60px;
+        @include MQ('m') {
+            display: block;
+            margin-top: 40px;
+        }
+    }
+    &_label {
+        align-items: center;
+        -moz-column-gap: 5px;
+        column-gap: 5px;
+        display: flex;
+        margin-bottom: 18px;
+    }
+    
+    &_input {
+        background-color: #f2f2f2;
+        border: none;
+        border-radius: 5px;
+        font-size: pxToRem(16);
+        line-height: 1.5;
+        outline-color: #e7242e;
+        padding: 24px 20px;
+        width: auto;
+        width: 100%;
+        resize: vertical;
+    }
+
+    &_firstname {
+        @include MQ('m') {
+            margin-top: 40px;
+        }
+    }
+    
+}
+
+.hp_contact_require {
+    align-items: center;
+    background-color: #e7242e;
+    border-radius: 3px;
+    display: flex;
+    font-size: 0;
+    height: 22px;
+    justify-content: center;
+    width: 33px;
+    &:before {
+        color: #fff;
+        content: "必須";
+        font-size: pxToRem(10);
+        font-weight: 700;
+    }
+}
+
+.el_btn__contact {
+    margin: 30px auto;
+}

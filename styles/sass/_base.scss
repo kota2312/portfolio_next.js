@@ -1,0 +1,55 @@
+@use './config/_var' as *;
+@use './config/_mixin' as *;
+@use './config/_function' as *;
+
+body {
+  position: relative;
+  font-family: $ff_base;
+  font-weight: 400;
+  line-height: $lht_base;
+  color: $c_txt;
+  font-variant-east-asian: proportional-width;
+  font-optical-sizing: auto;
+}
+
+a {
+  transition: $transSpeed;
+  @include FH() {
+    text-decoration: none;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+/* セクションCSS */
+section#aboutUs {
+  padding: pxToRem(100) 0 pxToRem(120) 0;
+}
+
+section#blog {
+  padding: pxToRem(100) 0 pxToRem(100) 0;
+}
+
+section#works {
+  padding: pxToRem(100) 0 pxToRem(120) 0;
+}
+
+section#certification {
+  padding: pxToRem(100) 0 pxToRem(120) 0;
+}
+
+section#skill {
+  padding: pxToRem(100) 0 pxToRem(120) 0;
+}
+
+section#contact {
+  padding: pxToRem(100) 0 pxToRem(120) 0;
+}
+
+section#cta {
+  padding: pxToRem(100) 0 pxToRem(60) 0;
+}

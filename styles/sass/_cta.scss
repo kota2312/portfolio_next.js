@@ -1,0 +1,29 @@
+@use './config/_mixin' as *;
+@use './config/_var' as *;
+@use './config/_function' as *;
+
+.bl_cta {
+    padding: 30px;
+    background: linear-gradient(180deg,#1976d2,#5177d5);
+    text-align: center;
+    > *:last-child {
+        margin-bottom: 0;
+    }
+    &_ttl {
+        padding-bottom: 10px;
+        margin-top: -6px;
+        margin-bottom: 40px;
+        border-bottom: 1px solid $c_white;
+        color: $c_white;
+        font-size: pxToRem(24);
+        font-weight: 600;
+    }
+    &_txt {
+        color: $c_white;
+        font-size: pxToRem(18);
+    }
+}
+
+.bl_cta .el_btn__cta {
+    margin: 50px auto;
+}

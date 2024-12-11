@@ -1,0 +1,19 @@
+// カスタムモジュールに含まれない、一般的なスタイルを記述します
+@use './sass/config/_var' as *;
+@use './sass/config/_mixin' as *;
+@use './sass/config/_helpers' as *;
+@use './sass/_css-wipe';
+@use './sass/_base';
+@use './sass/_layout';
+@use './sass/_element';
+@use './sass/_block';
+@use './sass/_header';
+@use './sass/_blog-card';
+@use './sass/_card';
+@use './sass/_jumbotron';
+@use './sass/_media';
+@use './sass/_tab-navigation';
+@use './sass/_cta';
+@use './sass/_chart';
+@use './sass/_contactform';
+@use './sass/_footer';

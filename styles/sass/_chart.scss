@@ -1,0 +1,15 @@
+@use './config/_var' as *;
+@use './config/_mixin' as *;
+@use './config/_function' as *;
+
+.bl_chartUnit {
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    gap: 20px;
+}
+
+@include MQ(m) {
+    .bl_chartUnit {
+        display: block;
+    }
+}
