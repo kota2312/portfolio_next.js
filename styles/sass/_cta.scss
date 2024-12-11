@@ -22,6 +22,9 @@
         color: $c_white;
         font-size: pxToRem(18);
     }
+    @include MQ(m) {
+        padding: 0;
+    }
 }
 
 .bl_cta .el_btn__cta {
