@@ -2,6 +2,13 @@
 @use './config/_var' as *;
 @use './config/_function' as *;
 
+.bl_mainVisual {
+  padding-top: 100px;
+  @include MQ('m') {
+    padding-top: 70px;
+  }
+}
+
 .ly_mainVisual_inner {
   display: flex;
   height: min(870 / 1920 * (100vw), 937px);
@@ -30,7 +37,7 @@
   left: 0;
   height: min(870 / 1920 * (100vw), 937px);
   margin: 0 auto;
-  z-index: 99999;
+  z-index: 1;
   max-width: min(1000 / 1920 * (100vw), pxToRem(1000));
   text-align: center;
   background-color: $c_black;
