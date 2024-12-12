@@ -40,7 +40,7 @@ export default function Footer() {
         <footer className="ly_footer bl_footer">
             <div className="ly_cont bl_footer_cont">
                 <div className="bl_footer_info">
-                    <a href="/" className="bl_footer_info_logo">
+                    <Link href="/" className="bl_footer_info_logo">
                         <img
                             alt=""
                             src="img/tk_footer_logo.png"
@@ -50,7 +50,7 @@ export default function Footer() {
                         <noscript>
                             <img alt="" src="img/TKlogo.png" />
                         </noscript>
-                    </a>
+                    </Link>
                 </div>
 
                 <div className="bl_footer_nav">

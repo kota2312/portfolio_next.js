@@ -1,5 +1,6 @@
 import React from "react";
 import index from "../pages/index";
+import Link from "next/link";
 
 const BlogCard = (props) => {
     let blogId = props.blogId;
@@ -15,7 +16,7 @@ const BlogCard = (props) => {
             </figure>
             <div className="bl_blog_card_body">
                 <p className="bl_blog_card_date">{blogDate}</p>
-                <a className="bl_blog_card_title" href={`/blogs/${blogId}`}>{blogTitle}</a>
+                <Link className="bl_blog_card_title" href={`/blogs/${blogId}`}>{blogTitle}</Link>
                 <div className="bl_blog_card_description">
                     <p>{blogDescription}</p>
                 </div>
