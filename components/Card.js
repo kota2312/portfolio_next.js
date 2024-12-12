@@ -52,14 +52,14 @@ export default function CardList({ sectionId }) {
                         {/* タイトル部分のみリンク化 */}
                         {content.url ? (
                             content.url.startsWith("http") ? (
-                                <a
+                                <Link
                                     href={content.url}
                                     className="bl_card_ttlLink"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
                                     <h3 className="bl_card_ttl">{content.ttl}</h3>
-                                </a>
+                                </Link>
                             ) : (
                                 <Link href={content.url} className="bl_card_ttlLink">
                                     <h3 className="bl_card_ttl">{content.ttl}</h3>

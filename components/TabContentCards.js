@@ -137,14 +137,14 @@ export default function TabContentCards({ sectionId, tabId }) {
                     <div className="bl_card_body">
                         {card.url ? (
                             card.url.startsWith("http") ? (
-                                <a
+                                <Link
                                     href={card.url}
                                     className="bl_card_ttlLink"
                                     target="_blank"
                                     rel="noopener noreferrer"
                                 >
                                     <h3 className="bl_card_ttl">{card.ttl}</h3>
-                                </a>
+                                </Link>
                             ) : (
                                 <Link href={card.url} className="bl_card_ttlLink">
                                     <h3 className="bl_card_ttl">{card.ttl}</h3>
