@@ -1,3 +1,5 @@
+import React from "react";
+import Link from "next/link";
 import { client } from "../../libs/client";
 import parse from 'html-react-parser';
 import { formatDate } from "../../utility/dateformat";
