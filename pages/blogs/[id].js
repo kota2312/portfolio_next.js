@@ -23,7 +23,7 @@ export default function BlogId({ blogs }) {
                             }}                            
                         />
                         <div className="button-wrap">
-                            <a href="../">記事一覧ページへ</a>
+                            <Link href="/">記事一覧ページへ</Link>
                         </div>
                     </div>
                 </section>
