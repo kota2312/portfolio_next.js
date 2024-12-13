@@ -1,8 +1,19 @@
+
 @use './config/_mixin' as *;
+@use './config/_var' as *;
+@use './config/_function' as *;
 
 .ly_cont {
   $wrp: '.ly_cont';
   @include contentCentering();
+  background-color: #FFF;
+  box-shadow: 16px 16px 35px rgba(0, 0, 0, 0.25);
+  padding: 70px;
+  border-radius: 30px;
+  @include MQ(m) {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
 
   &.ly_cont__col {
     display: flex;
@@ -13,6 +24,7 @@
       flex-direction: column;
       padding-top: 35px;
       padding-bottom: 35px;
+
     }
   }
 }
