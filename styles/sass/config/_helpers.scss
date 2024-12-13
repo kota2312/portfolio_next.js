@@ -175,12 +175,19 @@ margin-left
 }
 
 .hp_bgBase {
-  background-color: $c_gray_1;
+  background-color: $c_blue_1;
+  opacity: 0.9;
 }
 
 .hp_bgCta {
   background: linear-gradient(180deg, #1976d2, #5177d5);
 }
+
+.hp_spikes {
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
+}
+
 
 /* Border
 ========================================================================== */

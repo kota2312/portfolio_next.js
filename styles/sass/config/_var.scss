@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Yomogi&display=swap');
 // -------------------------------------------------------------------
 // Variables
 // -------------------------------------------------------------------
@@ -25,13 +26,13 @@ $breakpoints: (
 // Colors
 // -------------------------------------------------------------------
 $c_accent: #9b8056;
-$c_theme: #2e6198;
+$c_theme: #915da3;
 $c_base: #f4f4f4;
 
 $c_white: #fff;
 $c_gray_1: #f0f2f7;
 $c_gray_2: #ddd;
-$c_black: #101430;
+$c_black: #36233d;
 
 $c_blue_1: #07EBE9;
 $c_yellow_2: #dfdac5;
@@ -46,11 +47,11 @@ $c_bg_4: $c_gray_2;
 
 // Semantic Colors
 // -------------------------------------------------------------------
-// Texts
+// Texts $ff_base: 游ゴシック体, YuGothic, 游ゴシック, Yu Gothic, Meiryo, Hiragino Kaku Gothic ProN, Noto Sans CJK JP, sans-serif;
 // -------------------------------------------------------------------
 $ff_en: 'Barlow Semi Condensed', sans-serif;
 $ff_num: sans-serif;
-$ff_base: 游ゴシック体, YuGothic, 游ゴシック, Yu Gothic, Meiryo, Hiragino Kaku Gothic ProN, Noto Sans CJK JP, sans-serif;
+$ff_base: Yomogi, cursive;
 $ff_serif: serif;
 $fz_base: 1rem;
 $fz_base__sp: 0.75rem;

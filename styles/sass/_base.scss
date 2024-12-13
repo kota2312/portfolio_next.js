@@ -53,3 +53,8 @@ section#contact {
 section#cta {
   padding: pxToRem(100) 0 pxToRem(60) 0;
 }
+
+section {
+  z-index: 10;
+  position: relative;
+}

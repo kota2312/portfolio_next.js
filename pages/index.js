@@ -17,20 +17,21 @@ import Cta from "@/components/Cta";
 import Head from 'next/head';
 import ContactForm from "@/components/ContactForm";
 import BasicSlider from "@/components/BasicSlider";
+import MovieBg from "@/components/MovieBg";
 
 export default function Home({ images, blogs }) {
   return (
     <div>
       <Head />
       <Header />
-      
+      <MovieBg />
       {/* メインビジュアルセクション */}
       <section id="mainVisual" className="bl_mainVisual">
         <Jumbotron images={images} />
       </section>
       
       {/* 私たちについて */}
-      <section id="aboutUs" className="bl_aboutUs hp_bgBase">
+      <section id="aboutUs" className="bl_aboutUs">
         <div className="ly_cont">
           <Heading sectionId="aboutUs" /> {/* sectionIdで見出しを指定 */}
           <Media sectionId="aboutUs" />
@@ -46,7 +47,7 @@ export default function Home({ images, blogs }) {
         </div>
       </section>
       {/* 仕事内容 */}
-      <section id="works" className="bl_works hp_bgBase">
+      <section id="works" className="bl_works hp_bgBase hp_spikes">
         <div className="ly_cont">
           <Heading sectionId="works" /> {/* sectionIdで見出しを指定 */}
           <TabNavigation sectionId="works" />
@@ -60,7 +61,7 @@ export default function Home({ images, blogs }) {
         </div>
       </section>
       {/* skill */}
-      <section id="skill" className="bl_skill hp_bgBase">
+      <section id="skill" className="bl_skill hp_bgBase hp_spikes">
         <div className="ly_cont">
           <Heading sectionId="skill" /> {/* sectionIdで見出しを指定 */}
           <Chart sectionId="skill" />
