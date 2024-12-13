@@ -5,37 +5,88 @@
 
 
 //カードレイアウト
-.bl_blog_card_list {
-    grid-template-columns: repeat(3, 1fr);
-    display: grid;
-    gap: 20px;
-
-    .bl_blog_card_item {
-        box-shadow: 16px 16px 35px rgba(0, 0, 0, .25);
-    }
+.swiper-wrapper {
+    padding: 0 0 30px 0;
 }
 
-//カード内
-.bl_blog_card_body {
-    padding: pxToRem(15);
-    .bl_blog_card_date {
-        color: $c_gray_2;
-    }
-    .bl_blog_card_title {
-        font-weight: 600;
-        color: $c_black;
+/* 前へ次への矢印カスタマイズ */
+.swiper-button-prev,
+.swiper-button-next {
+  height: 70px !important;
+  width: 70px !important;
+}
+/* 前へ次への矢印カスタマイズ */
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "" !important;
+  height: 70px;
+  margin: auto;
+  width: 70px;
+}
+/* 前への矢印カスタマイズ */
+.swiper-button-prev::after {
+  background-image: url($icon_swiper_prev);
+}
+/* 次への矢印カスタマイズ */
+.swiper-button-next::after {
+  background-image: url($icon_swiper_next);
+}
+/* 画像サイズ調整 */
+.swiper-slide img {
+  height: auto;
+  width: 100%;
+}
+
+/* カードCSS */
+
+.bl_blog_card {
+    perspective: 600px;
+    transition: 0.5s;
+    &_ttlLink {
         text-decoration: none;
+        color: $c_black;
         @include FH() {
             text-decoration: underline;
             color: $c_red_1;
         }
+        &:before {
+            content: "";
+            inset: 0;
+            position: absolute;
+        }
     }
-    .bl_blog_card_description {
-        font-size: pxToRem(14);
+    &_title {
+        margin-bottom: 5px;
+        font-size: pxToRem(18);
+        font-weight: 600;
+    }
+    &_text {
+        color: #777;
+    }
+    &:nth-child(4n) {
+        margin-right: 0 !important; 
     }
 }
 
-//一覧ボタン
-.el_btn__blog {
-    margin: 50px auto;
+.bl_blog_card_imgWrapper {
+    position: relative;
+    padding-top: 50.25%;
+    overflow: hidden;
+    > img {
+        position: absolute;
+        top: 50%;
+        width: 100%;
+        transform: translateY(-50%);
+    }
+}
+
+.bl_blog_card_body {
+    padding: 15px;
+    background-color: $c_white;
+
+    > *:last-child {
+        margin-bottom: 0;
+    }
 }

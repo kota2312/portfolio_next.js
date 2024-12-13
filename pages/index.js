@@ -16,6 +16,7 @@ import Chart from "@/components/Chart";
 import Cta from "@/components/Cta";
 import Head from 'next/head';
 import ContactForm from "@/components/ContactForm";
+import BasicSlider from "@/components/BasicSlider";
 
 export default function Home({ images, blogs }) {
   return (
@@ -40,19 +41,7 @@ export default function Home({ images, blogs }) {
         <div className="ly_cont">
           <Heading sectionId="blog" /> {/* sectionIdで見出しを指定 */}
           <div className="bl_blog_card">
-            <ul className="bl_blog_card_list">
-              {blogs.map((blogs) => (
-                <BlogCard 
-                  key={blogs.id}
-                  blogId={blogs.id}
-                  blogImg={blogs.eyecatch.url}
-                  blogDate={formatDate(blogs.date)}
-                  blogTitle={blogs.title}
-                  blogDescription={blogs.description}
-                />
-              ))}
-            </ul>
-            <Link href="#" className="el_btn el_btn__blog">一覧ページはこちら</Link>
+            <BasicSlider blogs={blogs} /> {/* BasicSliderにデータを渡す */}
           </div>
         </div>
       </section>
@@ -105,10 +94,12 @@ export const getStaticProps = async () => {
   // blogデータの取得
   const data = await client.get({ endpoint: "blogs" });
 
+
   return {
     props: {
       blogs: data.contents,
       images: files,
     },
+    
   };
 };
