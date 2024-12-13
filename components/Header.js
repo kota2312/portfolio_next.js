@@ -7,6 +7,8 @@ export default function Header() {
         { name: "About us", href: "#aboutUs" },
         { name: "Blogs", href: "#blog" },
         { name: "Works", href: "#works" },
+        { name: "Certification", href: "#certification" },
+        { name: "Skill", href: "#skill" },
     ];
 
     useEffect(() => {

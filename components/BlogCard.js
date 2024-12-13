@@ -8,9 +8,9 @@ const BlogCard = (props) => {
     let blogDate = props.blogDate;
     let blogTitle = props.blogTitle;
     let blogDescription = props.blogDescription;
-    //console.log(blogId);
+    console.log(blogImg);
     return (
-        <li key={blogId} className="bl_blog_card_item">      
+        <div key={blogId} className="bl_blog_card_item">      
             <figure className="bl_blog_card_imgWrapper">
                 <img src={blogImg}></img>
             </figure>
@@ -21,7 +21,7 @@ const BlogCard = (props) => {
                     <p>{blogDescription}</p>
                 </div>
             </div>
-        </li>
+        </div>
     )
 }
 

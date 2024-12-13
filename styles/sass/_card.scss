@@ -29,9 +29,6 @@
     box-shadow: 16px 16px 35px rgba(0, 0, 0, 0.25);
     perspective: 600px;
     transition: 0.5s;
-    &:hover {
-        transform:rotateZ(15deg) translate(20%, -20%) rotateX(15deg) scale(0.9);
-    }
     &_ttlLink {
         text-decoration: none;
         color: $c_black;
