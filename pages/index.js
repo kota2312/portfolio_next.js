@@ -76,7 +76,7 @@ export default function Home({ images, blogs }) {
       </section>
       {/* CTA */}
       <section id="cta" className="bl_cta-wrap hp_bgCta">
-        <div className="ly_cont">
+        <div className="ly_cont ly_cont__cta">
           <Cta />
         </div>
       </section>

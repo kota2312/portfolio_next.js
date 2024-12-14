@@ -3,6 +3,11 @@
 @use './config/_function' as *;
 
 //tabのCSS
+
+.bl_tab_content {
+    overflow-y: hidden;
+}
+
 .bl_tabNav_inner {
     display: flex;
     align-items: center;

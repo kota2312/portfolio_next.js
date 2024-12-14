@@ -4,12 +4,14 @@
 
 /* footer ウィジェット */
 .ly_footer {
+    position: relative;
     color: $c_white;
     padding: 55px 0;
-    background: $c_black;
+    background: $c_red_1;
 }
 
 .bl_footer_cont {
+    position: relative;
     display: flex;
     justify-content: space-between;
 }
@@ -36,7 +38,7 @@
         padding-top: 10px;
         > a{
             line-height: 1.8;
-            color: #FFF;
+            color: $c_black;
             text-decoration: none;
         }
     }
@@ -58,7 +60,7 @@
             display: block;
             font-size: pxToRem(16);
             margin-top: 3em;
-            border-bottom: solid 1px #fff;
+            border-bottom: solid 1px $c_black;
             padding-bottom: 10px;
         }
         &_titlle {
@@ -68,7 +70,6 @@
             padding-left: 0;
             > a{
                 line-height: 1.8;
-                color: #FFF;
                 text-decoration: none;
             }
         }
