@@ -2,9 +2,17 @@
 @use './config/_var' as *;
 @use './config/_function' as *;
 
+.bl_cta-wrap {
+    opacity: 0.8;
+}
+
+.ly_cont__cta {
+    background-color: $c_red_1;
+    box-shadow: initial;
+}
+
 .bl_cta {
     padding: 30px;
-    background: linear-gradient(180deg,#1976d2,#5177d5);
     text-align: center;
     > *:last-child {
         margin-bottom: 0;
@@ -27,6 +35,7 @@
     }
 }
 
-.bl_cta .el_btn__cta {
+.el_btn__cta {
     margin: 50px auto;
+    background-color: $c_black;
 }
