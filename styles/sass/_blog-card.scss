@@ -62,6 +62,9 @@
             position: absolute;
         }
     }
+    &_item {
+        border: 1px solid #eee;
+    }
     &_title {
         margin-bottom: 5px;
         font-size: pxToRem(18);
