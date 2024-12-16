@@ -17,7 +17,7 @@ const BlogCard = (props) => {
             <div className="bl_blog_card_body">
                 <p className="bl_blog_card_date">{blogDate}</p>
                 <Link className="bl_blog_card_title" href={`/blogs/${blogId}`}>{blogTitle}</Link>
-                <div className="bl_blog_card_description">
+                <div className="bl_blog_card_text">
                     <p>{blogDescription}</p>
                 </div>
             </div>

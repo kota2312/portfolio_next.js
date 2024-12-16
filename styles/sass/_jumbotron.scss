@@ -170,6 +170,7 @@ slider animation
   animation-delay: 1.2s;
   @include MQ('m') {
     height: auto;
+    display: none;
   }
 
   .bl_mainVisual_animate_wrapper {
