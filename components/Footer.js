@@ -1,6 +1,10 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Footer() {
+    const router = useRouter();
+    const basePath = "/"; // 必要に応じてルートURLを変更する
+
     // フッターのリンクデータ
     const footerLinks = [
         {
@@ -14,27 +18,12 @@ export default function Footer() {
                 { label: "Skill", url: "#skill" },
             ],
         },
-        /*
-        {
-            title: "プラン",
-            links: [
-                { label: "About us", url: "#aboutUs" },
-            ],
-        },
-        {
-            title: "会社情報",
-            links: [
-                { label: "Blogs", url: "#blog" },
-            ],
-        },
-        {
-            title: "Works",
-            links: [
-                { label: "Works", url: "#works" },
-            ],
-        },
-        */
     ];
+
+    // 絶対パスリンクを作成するヘルパー関数
+    const resolveUrl = (url) => {
+        return url.startsWith("#") ? `${basePath}${url}` : url;
+    };
 
     return (
         <footer className="ly_footer bl_footer">
@@ -43,8 +32,8 @@ export default function Footer() {
                     <Link href="/" className="bl_footer_info_logo">
                         <img
                             alt=""
-                            src="img/tk_footer_logo.png"
-                            data-src="img/tk_footer_logo.png"
+                            src="/img/tk_footer_logo.png"
+                            data-src="/img/tk_footer_logo.png"
                             className="ls-is-cached lazyloaded"
                         />
                         <noscript>
@@ -60,7 +49,7 @@ export default function Footer() {
                             <li className="bl_footer_nav_title">{/*section.title*/}</li>
                             {section.links.map((link, index) => (
                                 <li className="bl_footer_nav_item" key={index}>
-                                    <Link href={link.url}>{link.label}</Link>
+                                    <Link href={resolveUrl(link.url)}>{link.label}</Link>
                                 </li>
                             ))}
                         </ul>

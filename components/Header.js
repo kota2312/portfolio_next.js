@@ -1,14 +1,17 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 export default function Header() {
+    const router = useRouter();
+
     const headerLinks = [
-        { name: "Home", href: "#" },
-        { name: "About us", href: "#aboutUs" },
-        { name: "Blogs", href: "#blog" },
-        { name: "Works", href: "#works" },
-        { name: "Certification", href: "#certification" },
-        { name: "Skill", href: "#skill" },
+        { name: "Home", href: "/" },
+        { name: "About us", href: "/#aboutUs" },
+        { name: "Blogs", href: "/#blog" },
+        { name: "Works", href: "/#works" },
+        { name: "Certification", href: "/#certification" },
+        { name: "Skill", href: "/#skill" },
     ];
 
     useEffect(() => {
@@ -61,8 +64,8 @@ export default function Header() {
     return (
         <header className="ly_header">
             <p className="bl_header_logo">
-                <Link href="." className="bl_header_logo_link">
-                    <img src="img/tk_header_logo.png" alt="ロゴ" />
+                <Link href="/" className="bl_header_logo_link">
+                    <img src="/img/tk_header_logo.png" alt="ロゴ" />
                 </Link>
             </p>
             <div className="ly_header_inner">
@@ -83,7 +86,7 @@ export default function Header() {
                     <ul className="bl_header_nav_list_btn">
                         <li className="bl_header_nav_item">
                             <Link 
-                                href="#contact" 
+                                href="/#contact" 
                                 className="el_btn"
                                 onClick={closeMenu} // お問い合わせボタンも同様にメニューを閉じる
                             >
