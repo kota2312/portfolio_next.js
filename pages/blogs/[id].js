@@ -2,35 +2,40 @@ import React from "react";
 import Link from "next/link";
 import { client } from "../../libs/client";
 import parse from 'html-react-parser';
+import Head from 'next/head';
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { formatDate } from "../../utility/dateformat";
 
 export default function BlogId({ blogs }) {
     return(
-        <main>
-            <article>
-                <section>
-                    <div className="inner-contents">
-                        <div className="date-wrap">
+        <div>
+            <Header />
+            <section id="blog-detail">
+                <div className="ly_cont">
+                    <div className="bl_blog_detail">
+                        <div className="bl_blog_detail_date">
                             <p>{formatDate(blogs.date)}</p>
                         </div>                        
-                        <div className="title-wrap">
+                        <div className="bl_blog_detail_ttl">
                             <h1>{blogs.title}</h1>
                         </div>
-                        <div className="img-wrap">
+                        <div className="bl_blog_detail_img">
                             <img src={blogs.eyecatch.url} alt={blogs.title}></img>
                         </div>
-                        <div className="main-wrap"
+                        <div className="bl_blog_detail_txt"
                             dangerouslySetInnerHTML={{
                                 __html: `${blogs.content}`,
                             }}                            
                         />
-                        <div className="button-wrap">
-                            <Link href="/">記事一覧ページへ</Link>
+                        <div className="bl_blog_detail_btn">
+                            <Link className="el_btn el_btn__blogs" href="/">記事一覧ページへ</Link>
                         </div>
                     </div>
-                </section>
-            </article>
-        </main>
+                </div>
+            </section>
+            <Footer />
+        </div>
     )
 }
 
