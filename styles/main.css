@@ -2554,6 +2554,18 @@ section {
   margin-bottom: 5px;
   font-size: 1.125rem;
   font-weight: 600;
+  color: #36233d;
+  text-decoration: none;
+}
+.bl_blog_card_title:focus {
+  text-decoration: underline;
+  color: #ef075e;
+}
+@media (hover: hover) {
+  .bl_blog_card_title:hover {
+    text-decoration: underline;
+    color: #ef075e;
+  }
 }
 .bl_blog_card_text {
   color: #777;
@@ -2856,6 +2868,7 @@ slider animation
 @media screen and (max-width: 768px) {
   .bl_mainVisual_right {
     height: auto;
+    display: none;
   }
 }
 .bl_mainVisual_right .bl_mainVisual_animate_wrapper {

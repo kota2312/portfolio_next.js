@@ -69,6 +69,12 @@
         margin-bottom: 5px;
         font-size: pxToRem(18);
         font-weight: 600;
+        color: $c_black;
+        text-decoration: none;
+        @include FH() {
+            text-decoration: underline;
+            color: $c_red_1;
+        }
     }
     &_text {
         color: #777;
