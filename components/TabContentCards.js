@@ -45,7 +45,7 @@ export default function TabContentCards({ sectionId, tabId }) {
                     img: "/img/top/works/dawnefo.png",
                     ttl: "(有)STUDIO NIKA様",
                     url: "https://studionika.co.jp/service/dawnefo/",
-                    txt: "入力補助システムのLLPを制作をさせていただきました。<br>担当：デザイン～コーディング<br>言語：HTML,CSS,Javascript",
+                    txt: "入力補助システムのLPを制作をさせていただきました。<br>担当：デザイン～コーディング<br>言語：HTML,CSS,Javascript",
                 },
             ],
             tab02: [
