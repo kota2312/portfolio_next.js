@@ -47,6 +47,12 @@ export default function TabContentCards({ sectionId, tabId }) {
                     url: "https://studionika.co.jp/service/dawnefo/",
                     txt: "入力補助システムのLPを制作をさせていただきました。<br>担当：デザイン～コーディング<br>言語：HTML,CSS,Javascript",
                 },
+                {
+                    img: "/img/top/works/megumi.png",
+                    ttl: "(有)恵産業様",
+                    url: "https://megumi-industries.co.jp/",
+                    txt: "DX業務改善・エアコン清掃・リユース・介護施設のご紹介等のサービスサイトを制作させていただきました。",
+                },
             ],
             tab02: [
                 {
