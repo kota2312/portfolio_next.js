@@ -51,7 +51,7 @@ export default function TabContentCards({ sectionId, tabId }) {
                     img: "/img/top/works/megumi.png",
                     ttl: "(有)恵産業様",
                     url: "https://megumi-industries.co.jp/",
-                    txt: "DX業務改善・エアコン清掃・リユース・介護施設のご紹介等のサービスサイトを制作させていただきました。",
+                    txt: "DX業務改善・エアコン清掃・リユース・介護施設のご紹介等のサービスサイトを制作させていただきました。<br>言語：HTML,CSS,Javascript",
                 },
             ],
             tab02: [
