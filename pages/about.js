@@ -4,7 +4,6 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Heading from "@/components/Heading";
 import Media from "@/components/Media";
-import MovieBg from "@/components/MovieBg";
 import { initScrollReveal } from "@/utility/scrollReveal";
 
 export default function About() {
@@ -13,18 +12,20 @@ export default function About() {
   }, []);
 
   return (
-    <div>
+    <div className="pg_editorial">
       <Head>
         <title>About us</title>
       </Head>
       <Header />
-      <MovieBg />
-      <section id="aboutUs" className="bl_aboutUs">
-        <div className="ly_cont">
-          <Heading sectionId="aboutUs" />
-          <Media sectionId="aboutUs" />
-        </div>
-      </section>
+      <main className="pg_editorial_main">
+        <section className="pg_editorial_section pg_editorial_section__about">
+          <p className="pg_editorial_index">01 / About</p>
+          <div className="pg_editorial_panel">
+            <Heading sectionId="aboutUs" />
+            <Media sectionId="aboutUs" />
+          </div>
+        </section>
+      </main>
       <Footer />
     </div>
   );

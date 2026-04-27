@@ -15,7 +15,6 @@ import Cta from "@/components/Cta";
 import Head from "next/head";
 import ContactForm from "@/components/ContactForm";
 import BasicSlider from "@/components/BasicSlider";
-import MovieBg from "@/components/MovieBg";
 
 export default function Home({ images, blogs }) {
   const horizontalRef = useRef(null);
@@ -37,7 +36,6 @@ export default function Home({ images, blogs }) {
     <div className="hp_horizontalSite">
       <Head />
       <Header />
-      <MovieBg />
       <main
         ref={horizontalRef}
         className="hp_horizontalPage"

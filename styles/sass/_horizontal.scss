@@ -4,12 +4,11 @@
 .hp_horizontalSite {
   min-height: 100vh;
   color: #f4f4f1;
-  background: #050505;
-
-  .video-wrap {
-    opacity: 0.42;
-    filter: contrast(1.25) saturate(0.7);
-  }
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    #050505;
+  background-size: 96px 96px;
 }
 
 .hp_horizontalPage {
@@ -67,9 +66,7 @@
     padding: clamp(34px, 5vw, 68px);
     overflow: auto;
     color: #f7f4ee;
-    background:
-      linear-gradient(135deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.03)),
-      rgba(5, 5, 5, 0.66);
+    background: rgba(5, 5, 5, 0.78);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 0;
     box-shadow: 0 28px 90px rgba(0, 0, 0, 0.42);
@@ -140,7 +137,7 @@
     height: auto;
     padding: clamp(42px, 6vw, 84px);
     color: #fff;
-    background: rgba(0, 0, 0, 0.58);
+    background: rgba(0, 0, 0, 0.72);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 0;
     box-shadow: 0 30px 100px rgba(0, 0, 0, 0.48);
@@ -155,6 +152,7 @@
 
     span:first-of-type {
       font-size: clamp(32px, 4.5vw, 78px);
+      color: #fff;
     }
 
     span:last-of-type {
@@ -181,7 +179,7 @@
 
     .bl_mainVisual_animate_slide {
       width: min(36vw, 620px);
-      filter: grayscale(0.25) contrast(1.08);
+      filter: grayscale(0.72) contrast(1.08);
     }
   }
 }
