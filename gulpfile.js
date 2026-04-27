@@ -25,10 +25,13 @@ function buildSass() {
 }
 
 function initBrowserSync(done) {
+  const nextPort = process.env.NEXT_PORT || process.env.PORT || 3000;
+
   browserSync.init({
-    proxy: 'http://localhost:3000',
+    proxy: `http://localhost:${nextPort}`,
     notify: false,
     open: true,
+    ui: false,
   });
   done();
 }

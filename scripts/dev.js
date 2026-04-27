@@ -1,10 +1,15 @@
 const { spawn } = require('child_process');
 
-const isWindows = process.platform === 'win32';
-const npmCommand = isWindows ? 'npm.cmd' : 'npm';
+const nextPort = process.env.NEXT_PORT || process.env.PORT || '3000';
+const env = {
+  ...process.env,
+  NEXT_PORT: nextPort,
+  PORT: nextPort,
+};
+
 const processes = [
-  spawn(npmCommand, ['run', 'next:dev'], { stdio: 'inherit' }),
-  spawn(npmCommand, ['run', 'watch'], { stdio: 'inherit' }),
+  spawn(`npm run next:dev -- -p ${nextPort}`, { shell: true, stdio: 'inherit', env }),
+  spawn('npm run watch', { shell: true, stdio: 'inherit', env }),
 ];
 
 let isShuttingDown = false;
