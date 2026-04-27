@@ -29,7 +29,7 @@ export default function BlogId({ blogs }) {
                             }}                            
                         />
                         <div className="bl_blog_detail_btn">
-                            <Link className="el_btn el_btn__blogs" href="/">記事一覧ページへ</Link>
+                            <Link className="el_btn el_btn__blogs" href="/blogs">記事一覧ページへ</Link>
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,4 @@
 import React from "react";
-import index from "../pages/index";
 import Link from "next/link";
 
 const BlogCard = (props) => {
@@ -8,11 +7,10 @@ const BlogCard = (props) => {
     let blogDate = props.blogDate;
     let blogTitle = props.blogTitle;
     let blogDescription = props.blogDescription;
-    console.log(blogImg);
     return (
         <div key={blogId} className="bl_blog_card_item">      
             <figure className="bl_blog_card_imgWrapper">
-                <img src={blogImg}></img>
+                {blogImg && <img src={blogImg} alt={blogTitle}></img>}
             </figure>
             <div className="bl_blog_card_body">
                 <p className="bl_blog_card_date">{blogDate}</p>

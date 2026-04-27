@@ -11,9 +11,9 @@ export default function Footer() {
             title: "メインメニュー",
             links: [
                 { label: "Home", url: "/" },
-                { label: "About us", url: "#aboutUs" },
-                { label: "Blogs", url: "#blog" },
-                { label: "Works", url: "#works" },
+                { label: "About us", url: "/about" },
+                { label: "Blogs", url: "/blogs" },
+                { label: "Works", url: "/works" },
                 { label: "Certification", url: "#certification" },
                 { label: "Skill", url: "#skill" },
             ],
