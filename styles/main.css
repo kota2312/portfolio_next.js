@@ -2965,7 +2965,7 @@ other animation
 .bl_media_body {
   flex: 1;
 }
-.bl_media_body*:last-child {
+.bl_media_body > *:last-child {
   margin-bottom: 0;
 }
 .bl_media_ttl {
