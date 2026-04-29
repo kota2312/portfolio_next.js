@@ -10,6 +10,7 @@ import { formatDate } from "@/utility/dateformat";
 export default function Home({ latestBlog }) {
   const horizontalRef = useRef(null);
   const [activePanel, setActivePanel] = useState(0);
+  const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
     initScrollReveal();
@@ -17,6 +18,9 @@ export default function Home({ latestBlog }) {
 
   const panels = [
     {
+      accent: "96, 132, 255",
+      orbit: "Orbit 001",
+      signal: "Atmos / Primary",
       label: "Top / Earth",
       title: "Earth",
       text: "Portfolio gateway for direction, design, frontend development, and systems.",
@@ -25,6 +29,9 @@ export default function Home({ latestBlog }) {
       linkLabel: "View profile",
     },
     {
+      accent: "255, 116, 68",
+      orbit: "Orbit 002",
+      signal: "Archive / Case",
       label: "Works / Mars",
       title: "Mars",
       text: "Selected production cases across websites, landing pages, and digital operations.",
@@ -33,6 +40,9 @@ export default function Home({ latestBlog }) {
       linkLabel: "View works",
     },
     {
+      accent: "214, 220, 232",
+      orbit: "Orbit 003",
+      signal: "Signal / Journal",
       label: "Blog / Mercury",
       title: "Mercury",
       text: latestBlog?.date
@@ -43,6 +53,9 @@ export default function Home({ latestBlog }) {
       linkLabel: "View journal",
     },
     {
+      accent: "214, 168, 112",
+      orbit: "Orbit 004",
+      signal: "Proof / Record",
       label: "Certification / Jupiter",
       title: "Jupiter",
       text: "Qualifications and learning records behind delivery quality.",
@@ -51,6 +64,9 @@ export default function Home({ latestBlog }) {
       linkLabel: "View certification",
     },
     {
+      accent: "242, 180, 132",
+      orbit: "Orbit 005",
+      signal: "System / Skill",
       label: "Skill / Venus",
       title: "Venus",
       text: "A compact view of tools, skills, and production strengths.",
@@ -59,6 +75,9 @@ export default function Home({ latestBlog }) {
       linkLabel: "View skills",
     },
     {
+      accent: "130, 238, 222",
+      orbit: "Orbit 006",
+      signal: "Open / Contact",
       label: "Contact / Beyond",
       title: "Beyond",
       text: "For production, operation, direction, or front-end development work.",
@@ -86,8 +105,29 @@ export default function Home({ latestBlog }) {
 
     const updatePanelIndex = () => {
       const panelWidth = container.clientWidth || window.innerWidth || 1;
-      const nextIndex = Math.round(container.scrollLeft / panelWidth);
+      const nextProgress = container.scrollLeft / panelWidth;
+      const nextIndex = Math.round(nextProgress);
+      const fractional = nextProgress - Math.floor(nextProgress);
+
+      setScrollProgress(nextProgress);
       setActivePanel(Math.max(0, Math.min(nextIndex, panels.length - 1)));
+
+      document.documentElement.style.setProperty(
+        "--space-react-x",
+        `${22 + nextProgress * 13}%`
+      );
+      document.documentElement.style.setProperty(
+        "--space-react-y",
+        `${18 + fractional * 46}%`
+      );
+      document.documentElement.style.setProperty(
+        "--space-react-alpha",
+        `${0.16 + Math.min(Math.abs(fractional - 0.5) * 0.22, 0.18)}`
+      );
+      document.documentElement.style.setProperty(
+        "--space-react-scale",
+        `${1 + Math.abs(fractional - 0.5) * 0.24}`
+      );
     };
 
     updatePanelIndex();
@@ -114,6 +154,40 @@ export default function Home({ latestBlog }) {
       left: horizontalRef.current.clientWidth * nextIndex,
       behavior: "smooth",
     });
+  };
+
+  const getPanelDistance = (index) => index - scrollProgress;
+
+  const getBodyStyle = (index) => {
+    const distance = getPanelDistance(index);
+    const depth = Math.min(Math.abs(distance), 1.2);
+
+    return {
+      opacity: 1 - depth * 0.5,
+      transform: `translate3d(${distance * -56}px, ${depth * 18}px, 0)`,
+    };
+  };
+
+  const getTitleStyle = (index) => {
+    const distance = getPanelDistance(index);
+    const depth = Math.min(Math.abs(distance), 1.1);
+
+    return {
+      opacity: 1 - depth * 0.46,
+      transform: `translate3d(${distance * -82}px, ${depth * 26}px, 0) scale(${1 -
+        depth * 0.04})`,
+      filter: `blur(${depth * 3.2}px)`,
+    };
+  };
+
+  const getVisualStyle = (index) => {
+    const distance = getPanelDistance(index);
+    const depth = Math.min(Math.abs(distance), 1.4);
+
+    return {
+      transform: `translate3d(${distance * 48}px, ${depth * -16}px, 0) scale(${1.06 -
+        depth * 0.03})`,
+    };
   };
 
   return (
@@ -152,18 +226,31 @@ export default function Home({ latestBlog }) {
         onWheel={handleHorizontalWheel}
       >
         {panels.map((panel, index) => (
-          <section className="hp_panel hp_showcase_panel" key={panel.label}>
+          <section
+            className="hp_panel hp_showcase_panel"
+            key={panel.label}
+            style={{ "--panel-accent": panel.accent }}
+          >
             <div className="hp_showcase_count">
               <span>{String(index + 1).padStart(2, "0")}</span>
               <span>/</span>
               <span>{String(panels.length).padStart(2, "0")}</span>
             </div>
             <figure className="hp_showcase_visual">
-              <img src={panel.image} alt="" />
+              <span className="hp_showcase_visual_scan" aria-hidden="true"></span>
+              <span className="hp_showcase_visual_meta hp_showcase_visual_meta__top">
+                {panel.orbit}
+              </span>
+              <span className="hp_showcase_visual_meta hp_showcase_visual_meta__bottom">
+                {panel.signal}
+              </span>
+              <img src={panel.image} alt="" style={getVisualStyle(index)} />
             </figure>
-            <div className="hp_showcase_body">
+            <div className="hp_showcase_body" style={getBodyStyle(index)}>
               <p className="hp_showcase_label">{panel.label}</p>
-              <h1 className="hp_showcase_title">{panel.title}</h1>
+              <h1 className="hp_showcase_title" style={getTitleStyle(index)}>
+                {panel.title}
+              </h1>
               <p className="hp_showcase_text">{panel.text}</p>
               <Link href={panel.href} className="hp_showcase_link">
                 {panel.linkLabel}

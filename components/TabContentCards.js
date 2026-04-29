@@ -132,6 +132,12 @@ export default function TabContentCards({ sectionId, tabId }) {
     ];
 
     const cardsToDisplay = contentData[sectionId]?.[tabId] || defaultCards;
+    const tabLabelMap = {
+        tab01: "Case",
+        tab02: "Service",
+        tab03: "Transmission",
+    };
+    const tabLabel = tabLabelMap[tabId] || "Archive";
 
     return (
         <div className="bl_cardUnit bl_cardUnit__col4">
@@ -141,6 +147,10 @@ export default function TabContentCards({ sectionId, tabId }) {
                         <img src={card.img} alt={card.ttl} />
                     </figure>
                     <div className="bl_card_body">
+                        <div className="bl_card_meta">
+                            <span>{tabLabel}</span>
+                            <span>{String(index + 1).padStart(2, "0")}</span>
+                        </div>
                         {card.url ? (
                             card.url.startsWith("http") ? (
                                 <Link

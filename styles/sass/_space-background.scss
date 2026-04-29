@@ -1,4 +1,11 @@
 .app_spaceMotion {
+  --space-react-x: 22%;
+  --space-react-y: 18%;
+  --space-react-alpha: 0.18;
+  --space-react-scale: 1;
+}
+
+.app_spaceMotion {
   position: fixed;
   inset: 0;
   z-index: 0;
@@ -9,6 +16,26 @@
     radial-gradient(circle at 82% 28%, rgba(176, 88, 56, 0.12), transparent 24%),
     linear-gradient(180deg, rgba(3, 6, 16, 0.2), rgba(0, 0, 0, 0.52));
   opacity: 0.92;
+
+  &::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    background:
+      radial-gradient(
+        circle at var(--space-react-x) var(--space-react-y),
+        rgba(148, 178, 255, var(--space-react-alpha)),
+        transparent calc(18% * var(--space-react-scale))
+      ),
+      radial-gradient(
+        circle at calc(100% - var(--space-react-x)) calc(100% - var(--space-react-y)),
+        rgba(255, 122, 92, calc(var(--space-react-alpha) * 0.72)),
+        transparent calc(14% * var(--space-react-scale))
+      );
+    mix-blend-mode: screen;
+    opacity: 0.95;
+    transition: background-position 0.2s linear, opacity 0.2s linear;
+  }
 }
 
 .app_spaceMotion_canvas {

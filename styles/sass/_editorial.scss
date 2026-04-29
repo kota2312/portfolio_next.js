@@ -2,6 +2,8 @@
 @use './config/_var' as *;
 
 .pg_editorial {
+  --page-accent: 239, 7, 94;
+  --page-accent-soft: rgba(239, 7, 94, 0.18);
   min-height: 100vh;
   color: #f6f2ea;
   background:
@@ -47,6 +49,37 @@
   }
 }
 
+.pg_editorial_section__about {
+  --page-accent: 96, 132, 255;
+  --page-accent-soft: rgba(96, 132, 255, 0.18);
+}
+
+.pg_editorial_section__works {
+  --page-accent: 255, 116, 68;
+  --page-accent-soft: rgba(255, 116, 68, 0.18);
+}
+
+.pg_editorial_section__blogs,
+.pg_editorial_section__blogDetail {
+  --page-accent: 214, 220, 232;
+  --page-accent-soft: rgba(214, 220, 232, 0.18);
+}
+
+.pg_editorial_section__certification {
+  --page-accent: 214, 168, 112;
+  --page-accent-soft: rgba(214, 168, 112, 0.18);
+}
+
+.pg_editorial_section__skill {
+  --page-accent: 242, 180, 132;
+  --page-accent-soft: rgba(242, 180, 132, 0.18);
+}
+
+.pg_editorial_section__contact {
+  --page-accent: 130, 238, 222;
+  --page-accent-soft: rgba(130, 238, 222, 0.18);
+}
+
 .pg_editorial_index {
   position: absolute;
   top: 116px;
@@ -64,33 +97,58 @@
   width: min(1120px, 82vw);
   padding: clamp(36px, 6vw, 76px);
   color: #f6f2ea;
-  background: rgba(5, 5, 5, 0.78);
+  position: relative;
+  background:
+    radial-gradient(circle at 82% 18%, var(--page-accent-soft), transparent 26%),
+    rgba(5, 5, 5, 0.78);
   border: 1px solid rgba(255, 255, 255, 0.22);
   box-shadow: 0 34px 110px rgba(0, 0, 0, 0.45);
   backdrop-filter: blur(14px);
 
+  &::before {
+    position: absolute;
+    top: 18px;
+    right: 24px;
+    font-family: $ff_editorial;
+    font-size: pxToRem(11);
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.46);
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+  }
+
+  &::after {
+    position: absolute;
+    right: 24px;
+    bottom: 18px;
+    width: 118px;
+    height: 1px;
+    content: "";
+    background: linear-gradient(90deg, rgba(var(--page-accent), 0), rgba(var(--page-accent), 0.92));
+  }
+
   .bl_heading {
-    margin-bottom: 44px;
+    margin-bottom: 34px;
   }
 
   .el_hgroup_sub {
     font-family: $ff_editorial;
-    font-size: clamp(14px, 1.8vw, 22px);
+    font-size: clamp(13px, 1.4vw, 18px);
     font-weight: 700;
     color: rgba(255, 255, 255, 0.7);
-    letter-spacing: 0.24em;
+    letter-spacing: 0.22em;
     text-transform: uppercase;
   }
 
   .el_lv2Heading {
-    max-width: 860px;
-    font-size: clamp(26px, 3.6vw, 50px);
+    max-width: 760px;
+    font-size: clamp(22px, 2.8vw, 38px);
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.22;
     color: #fff;
 
     .hp_color_gradient {
-      color: $c_red_1;
+      color: rgb(var(--page-accent));
       -webkit-text-fill-color: currentColor;
       background: none;
       background-clip: initial;
@@ -138,6 +196,34 @@
   }
 }
 
+.pg_editorial_section__about .pg_editorial_panel::before {
+  content: "Planet log / Earth";
+}
+
+.pg_editorial_section__works .pg_editorial_panel::before {
+  content: "Archive / Mars";
+}
+
+.pg_editorial_section__blogs .pg_editorial_panel::before {
+  content: "Transmission / Mercury";
+}
+
+.pg_editorial_section__blogDetail .pg_editorial_panel::before {
+  content: "Signal / Mercury";
+}
+
+.pg_editorial_section__certification .pg_editorial_panel::before {
+  content: "Record / Jupiter";
+}
+
+.pg_editorial_section__skill .pg_editorial_panel::before {
+  content: "System / Venus";
+}
+
+.pg_editorial_section__contact .pg_editorial_panel::before {
+  content: "Open line / Beyond";
+}
+
 .pg_editorial_panel__tabbed {
   display: flex;
   flex-direction: column;
@@ -181,6 +267,20 @@
     width: auto;
     margin: 0 14px;
     padding: 34px 22px;
+
+    .bl_heading {
+      margin-bottom: 28px;
+    }
+
+    .el_hgroup_sub {
+      font-size: clamp(12px, 3.5vw, 15px);
+    }
+
+    .el_lv2Heading {
+      max-width: none;
+      font-size: clamp(20px, 7vw, 30px);
+      line-height: 1.26;
+    }
   }
 
   .pg_editorial_panel__tabbed {

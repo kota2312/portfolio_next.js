@@ -18,6 +18,10 @@ export default function BlogId({ blogs }) {
           <p className="pg_editorial_index">03 / Article</p>
           <div className="pg_editorial_panel pg_editorial_panel__detail">
             <div className="bl_blog_detail">
+              <div className="bl_blog_detail_signal">
+                <span>Transmission / Mercury</span>
+                <span>Log {String(blogs.id).slice(0, 6).toUpperCase()}</span>
+              </div>
               <div className="bl_blog_detail_date">
                 <p>{formatDate(blogs.date)}</p>
               </div>

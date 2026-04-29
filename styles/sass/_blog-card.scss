@@ -118,6 +118,17 @@
         letter-spacing: 0.16em;
         text-transform: uppercase;
     }
+    &_meta {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        font-family: $ff_editorial;
+        font-size: pxToRem(11);
+        font-weight: 700;
+        color: rgba(0, 0, 0, 0.52);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+    }
     &_text {
         font-size: pxToRem(14);
         line-height: 1.8;
