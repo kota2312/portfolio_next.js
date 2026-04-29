@@ -220,6 +220,16 @@ export default function Home({ latestBlog }) {
           </button>
         )}
       </div>
+      {activePanel === 0 && (
+        <button
+          type="button"
+          className="hp_mobileIntroGuide"
+          onClick={() => handleGuideClick(1)}
+          aria-label="Scroll to the next panel"
+        >
+          <span className="hp_mobileIntroGuide_arrow" aria-hidden="true"></span>
+        </button>
+      )}
       <main
         ref={horizontalRef}
         className="hp_horizontalPage hp_showcase"

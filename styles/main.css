@@ -3348,6 +3348,10 @@ video {
   gap: 14px;
 }
 
+.hp_mobileIntroGuide {
+  display: none;
+}
+
 .hp_scrollGuide {
   display: inline-flex;
   align-items: center;
@@ -3772,6 +3776,51 @@ video {
   .hp_scrollGuides {
     display: none;
   }
+  .hp_mobileIntroGuide {
+    position: fixed;
+    top: 88px;
+    right: 16px;
+    z-index: 111;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    padding: 0;
+    color: rgba(246, 242, 234, 0.9);
+    cursor: pointer;
+    background: rgba(0, 0, 0, 0.44);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 50%;
+    backdrop-filter: blur(10px);
+    animation: mobileGuidePulse 1.8s ease-in-out infinite;
+  }
+  .hp_mobileIntroGuide_arrow {
+    position: relative;
+    display: block;
+    width: 22px;
+    height: 12px;
+  }
+  .hp_mobileIntroGuide_arrow::before, .hp_mobileIntroGuide_arrow::after {
+    position: absolute;
+    top: 50%;
+    content: "";
+  }
+  .hp_mobileIntroGuide_arrow::before {
+    left: 0;
+    width: 16px;
+    height: 1px;
+    background: currentColor;
+    transform: translateY(-50%);
+  }
+  .hp_mobileIntroGuide_arrow::after {
+    right: 0;
+    width: 8px;
+    height: 8px;
+    border-top: 1px solid currentColor;
+    border-right: 1px solid currentColor;
+    transform: translateY(-50%) rotate(45deg);
+  }
   .hp_horizontalPage {
     width: 100%;
     height: 100dvh;
@@ -3833,6 +3882,16 @@ video {
     min-height: 40px;
     font-size: pxToRem(11);
     letter-spacing: 0.14em;
+  }
+}
+@keyframes mobileGuidePulse {
+  0%, 100% {
+    transform: translateX(0);
+    opacity: 0.72;
+  }
+  50% {
+    transform: translateX(4px);
+    opacity: 1;
   }
 }
 .pg_editorial {
