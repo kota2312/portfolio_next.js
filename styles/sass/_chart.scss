@@ -8,8 +8,32 @@
     gap: 20px;
 }
 
+.bl_chart {
+    padding: 22px 20px 18px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+
+    h3 {
+        margin-bottom: 18px;
+        font-family: $ff_en;
+        font-size: pxToRem(26);
+        font-weight: 700;
+        color: #fff;
+        letter-spacing: 0;
+    }
+}
+
 @include MQ(m) {
     .bl_chartUnit {
-        display: block;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .bl_chart {
+        padding: 18px 16px 14px;
+
+        h3 {
+            font-size: pxToRem(22);
+        }
     }
 }

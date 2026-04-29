@@ -22,6 +22,29 @@ export default function Skill() {
           <p className="pg_editorial_index">05 / Skill</p>
           <div className="pg_editorial_panel">
             <Heading sectionId="skill" />
+            <div className="bl_editorialHero bl_editorialHero__skill">
+              <div className="bl_editorialHero_main">
+                <p className="bl_editorialHero_kicker">System overview</p>
+                <p className="bl_editorialHero_text">
+                  フロントエンドを軸にしつつ、更新運用やバックエンド連携を見据えた実装バランスを意識しています。
+                  得意領域と補助領域が一目で伝わるよう、グラフとして整理しています。
+                </p>
+              </div>
+              <dl className="bl_editorialInfo">
+                <div className="bl_editorialInfo_row">
+                  <dt>Core</dt>
+                  <dd>HTML, CSS, JavaScript, React, Next.js</dd>
+                </div>
+                <div className="bl_editorialInfo_row">
+                  <dt>Support</dt>
+                  <dd>PHP, SQL, Node.js, Git</dd>
+                </div>
+                <div className="bl_editorialInfo_row">
+                  <dt>View</dt>
+                  <dd>Frontend / Backend / Other split chart</dd>
+                </div>
+              </dl>
+            </div>
             <Chart sectionId="skill" />
           </div>
         </section>

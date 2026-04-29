@@ -7,7 +7,7 @@
 .bl_tab_content {
     flex: 1;
     min-height: 0;
-    padding-top: 10px;
+    padding-top: 12px;
     padding-right: 8px;
     overflow-y: auto;
 }
@@ -23,30 +23,38 @@
     display: flex;
     align-items: center;
     flex-wrap: wrap;
-    margin-top: 20px;
-    margin-bottom: 10px;
+    gap: 10px;
+    margin-top: 4px;
+    margin-bottom: 8px;
 }
 
 .bl_tabNav_link {
-    display: inline-block;
-    padding-right: 30px;
-    padding-bottom: 10px;
-    padding-left: 30px;
-    margin-bottom: 10px;
-    border-bottom: 4px solid $c_gray_1;
+    display: inline-flex;
+    align-items: center;
+    min-height: 42px;
+    padding: 0 18px;
+    margin-bottom: 0;
+    font-family: $ff_editorial;
+    font-size: pxToRem(12);
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 255, 255, 0.16);
+    border-bottom-width: 1px;
     color: $c_gray_2;
     text-decoration: none;
-    transition: .25;
+    transition: .25s;
     @include FH() {
-        border-bottom-color: $c_red_1;
+        border-color: rgba(255, 255, 255, 0.38);
         color: $c_red_1;
-        transition: .75;
+        transition: .75s;
     }
 }
 
 .bl_tabNav_link.is_active {
-    border-bottom-color: $c_red_1;
-    color: $c_red_1;
+    border-color: rgba(255, 255, 255, 0.92);
+    color: #050505;
+    background: #f6f2ea;
     pointer-events: none;
 }
 
@@ -62,7 +70,7 @@
         overflow-x: auto;
         .bl_tabNav_inner {
             flex-wrap: nowrap;
-            justify-content: center;
+            justify-content: flex-start;
             margin-bottom: 0;
             white-space: nowrap;
         }

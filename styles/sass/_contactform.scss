@@ -3,7 +3,7 @@
 @use './config/_function' as *;
 
 .ly_contact_cont {
-    max-width: 1000px;
+    max-width: none;
     margin: 0 auto;
 }
 
@@ -13,7 +13,7 @@
 
 .bl_contact {
     &_columns_1 {
-        margin-top: 40px;
+        margin-top: 22px;
     }
     &_columns_2 {
         grid-column-gap: 20px;
@@ -21,10 +21,10 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 1fr;
-        margin-top: 60px;
+        margin-top: 0;
         @include MQ('m') {
             display: block;
-            margin-top: 40px;
+            margin-top: 0;
         }
     }
     &_label {
@@ -32,25 +32,37 @@
         -moz-column-gap: 5px;
         column-gap: 5px;
         display: flex;
-        margin-bottom: 18px;
+        margin-bottom: 12px;
+        font-family: $ff_editorial;
+        font-size: pxToRem(11);
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.72);
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
     }
     
     &_input {
-        background-color: #f2f2f2;
-        border: none;
-        border-radius: 5px;
-        font-size: pxToRem(16);
+        color: #f6f2ea;
+        background-color: rgba(255, 255, 255, 0.06);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 0;
+        font-size: pxToRem(15);
         line-height: 1.5;
-        outline-color: #e7242e;
-        padding: 24px 20px;
+        outline: none;
+        padding: 18px 16px;
         width: auto;
         width: 100%;
         resize: vertical;
+
+        &:focus {
+            border-color: rgba(255, 255, 255, 0.42);
+            box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.12);
+        }
     }
 
     &_firstname {
         @include MQ('m') {
-            margin-top: 40px;
+            margin-top: 22px;
         }
     }
     
@@ -59,12 +71,12 @@
 .hp_contact_require {
     align-items: center;
     background-color: #e7242e;
-    border-radius: 3px;
+    border-radius: 0;
     display: flex;
     font-size: 0;
-    height: 22px;
+    height: 18px;
     justify-content: center;
-    width: 33px;
+    width: 28px;
     &:before {
         color: #fff;
         content: "必須";
@@ -74,5 +86,14 @@
 }
 
 .el_btn__contact {
-    margin: 30px auto;
+    width: 100%;
+    min-height: 54px;
+    margin: 28px auto 0;
+    font-family: $ff_editorial;
+    font-size: pxToRem(12);
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    background: #f6f2ea;
+    border: 0;
 }

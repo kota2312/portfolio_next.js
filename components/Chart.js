@@ -1,12 +1,17 @@
 "use client";
-import { Chart as ChartJS, BarElement, Tooltip, Legend, CategoryScale, LinearScale } from "chart.js";
+import {
+  Chart as ChartJS,
+  BarElement,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+} from "chart.js";
 import { Bar } from "react-chartjs-2";
 
-// 必要な要素を登録
 ChartJS.register(BarElement, Tooltip, Legend, CategoryScale, LinearScale);
 
 export default function Chart({ sectionId }) {
-  // データセットを定義
   const datasets = {
     skill: [
       {
@@ -68,40 +73,35 @@ export default function Chart({ sectionId }) {
         },
       },
     ],
-    hoge: [
-      {
-        title: "Example Chart for HOGE",
-        data: {
-          labels: ["Category 1", "Category 2", "Category 3"],
-          datasets: [
-            {
-              label: "Example Data",
-              data: [5, 3, 4],
-              backgroundColor: ["rgba(153, 102, 255, 0.2)", "rgba(255, 99, 132, 0.2)", "rgba(54, 162, 235, 0.2)"],
-              borderColor: ["rgba(153, 102, 255, 1)", "rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
-              borderWidth: 1,
-            },
-          ],
-        },
-      },
-    ],
   };
 
-  // スケール設定
   const options = {
     responsive: true,
     maintainAspectRatio: true,
-    indexAxis: "y", // 横向きグラフに設定
+    indexAxis: "y",
     scales: {
       x: {
         beginAtZero: true,
-        max: 5, // 5段階にスケールを設定
+        max: 5,
+        ticks: {
+          color: "rgba(246, 242, 234, 0.72)",
+        },
+        grid: {
+          color: "rgba(255, 255, 255, 0.08)",
+        },
         title: {
           display: true,
           text: "Skill Level",
+          color: "rgba(246, 242, 234, 0.58)",
         },
       },
       y: {
+        ticks: {
+          color: "rgba(246, 242, 234, 0.82)",
+        },
+        grid: {
+          color: "rgba(255, 255, 255, 0.04)",
+        },
         title: {
           display: true,
           text: "",
@@ -112,11 +112,13 @@ export default function Chart({ sectionId }) {
       legend: {
         display: true,
         position: "top",
+        labels: {
+          color: "rgba(246, 242, 234, 0.72)",
+        },
       },
     },
   };
 
-  // sectionId に対応するグラフを取得
   const graphs = datasets[sectionId] || [];
 
   return (
@@ -124,7 +126,19 @@ export default function Chart({ sectionId }) {
       {graphs.map((graph, index) => (
         <div className="bl_chart" key={index}>
           <h3>{graph.title}</h3>
-          <Bar data={graph.data} options={{ ...options, scales: { ...options.scales, y: { title: { text: graph.title } } } }} />
+          <Bar
+            data={graph.data}
+            options={{
+              ...options,
+              scales: {
+                ...options.scales,
+                y: {
+                  ...options.scales.y,
+                  title: { display: true, text: graph.title },
+                },
+              },
+            }}
+          />
         </div>
       ))}
     </div>
