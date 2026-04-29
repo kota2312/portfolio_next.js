@@ -18,10 +18,10 @@
 
 .bl_footer_info_logo {
   display: block;
-  width: 96px;
+  width: 132px;
   pointer-events: auto;
-  opacity: 0.56;
-  transition: opacity 0.25s;
+  opacity: 0.74;
+  transition: opacity 0.25s, transform 0.25s;
 
   img {
     width: 100%;
@@ -29,6 +29,7 @@
 
   @include FH() {
     opacity: 1;
+    transform: translateY(-3px);
   }
 }
 
@@ -39,6 +40,6 @@
   }
 
   .bl_footer_info_logo {
-    width: 74px;
+    width: 98px;
   }
 }

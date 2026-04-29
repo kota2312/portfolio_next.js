@@ -48,7 +48,8 @@ export default function Header() {
         <header className="ly_header">
             <p className="bl_header_logo">
                 <Link href="/" className="bl_header_logo_link" onClick={closeMenu}>
-                    <img src="/img/tk_header_logo.png" alt="Kota Takahashi" />
+                    <span className="bl_header_logo_mark">K.T</span>
+                    <span className="bl_header_logo_text">PORTFOLIO</span>
                 </Link>
             </p>
             <div className="ly_header_inner">

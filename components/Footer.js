@@ -6,9 +6,9 @@ export default function Footer() {
             <div className="bl_footer_cont">
                 <Link href="/" className="bl_footer_info_logo">
                     <img
-                        alt="Kota Takahashi"
-                        src="/img/tk_footer_logo.png"
-                        data-src="/img/tk_footer_logo.png"
+                        alt="K.T PORTFOLIO"
+                        src="/img/branding/kt_portfolio_mark.png"
+                        data-src="/img/branding/kt_portfolio_mark.png"
                         className="ls-is-cached lazyloaded"
                     />
                 </Link>

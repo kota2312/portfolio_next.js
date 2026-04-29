@@ -20,7 +20,7 @@ export default function Works() {
       <main className="pg_editorial_main">
         <section className="pg_editorial_section pg_editorial_section__works">
           <p className="pg_editorial_index">02 / Works</p>
-          <div className="pg_editorial_panel">
+          <div className="pg_editorial_panel pg_editorial_panel__tabbed">
             <Heading sectionId="works" />
             <TabNavigation sectionId="works" />
           </div>

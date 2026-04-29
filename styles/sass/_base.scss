@@ -2,6 +2,10 @@
 @use './config/_mixin' as *;
 @use './config/_function' as *;
 
+html {
+  overflow-y: scroll;
+}
+
 body {
   position: relative;
   font-family: $ff_base;
@@ -10,6 +14,7 @@ body {
   color: $c_txt;
   font-variant-east-asian: proportional-width;
   font-optical-sizing: auto;
+  scrollbar-gutter: stable;
 }
 
 a {

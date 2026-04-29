@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import Head from "next/head";
 import Link from "next/link";
 import { client } from "../libs/client";
@@ -9,19 +9,11 @@ import { formatDate } from "@/utility/dateformat";
 
 export default function Home({ latestBlog }) {
   const horizontalRef = useRef(null);
+  const [activePanel, setActivePanel] = useState(0);
 
   useEffect(() => {
     initScrollReveal();
   }, []);
-
-  const handleHorizontalWheel = (event) => {
-    if (window.innerWidth <= 768 || !horizontalRef.current) {
-      return;
-    }
-
-    event.preventDefault();
-    horizontalRef.current.scrollLeft += event.deltaY + event.deltaX;
-  };
 
   const panels = [
     {
@@ -47,8 +39,8 @@ export default function Home({ latestBlog }) {
         ? `${formatDate(latestBlog.date)} / ${latestBlog.description || "Latest article"}`
         : "Notes, updates, and records from recent work.",
       image: "/img/top/showcase/mercury.png",
-      href: latestBlog?.id ? `/blogs/${latestBlog.id}` : "/blogs",
-      linkLabel: "Read latest",
+      href: "/blogs",
+      linkLabel: "View journal",
     },
     {
       label: "Certification / Jupiter",
@@ -76,12 +68,84 @@ export default function Home({ latestBlog }) {
     },
   ];
 
+  const handleHorizontalWheel = (event) => {
+    if (window.innerWidth <= 768 || !horizontalRef.current) {
+      return;
+    }
+
+    event.preventDefault();
+    horizontalRef.current.scrollLeft += event.deltaY + event.deltaX;
+  };
+
+  useEffect(() => {
+    const container = horizontalRef.current;
+
+    if (!container) {
+      return undefined;
+    }
+
+    const updatePanelIndex = () => {
+      const panelWidth = container.clientWidth || window.innerWidth || 1;
+      const nextIndex = Math.round(container.scrollLeft / panelWidth);
+      setActivePanel(Math.max(0, Math.min(nextIndex, panels.length - 1)));
+    };
+
+    updatePanelIndex();
+    container.addEventListener("scroll", updatePanelIndex, { passive: true });
+    window.addEventListener("resize", updatePanelIndex);
+
+    return () => {
+      container.removeEventListener("scroll", updatePanelIndex);
+      window.removeEventListener("resize", updatePanelIndex);
+    };
+  }, [panels.length]);
+
+  const handleGuideClick = (direction) => {
+    if (!horizontalRef.current) {
+      return;
+    }
+
+    const nextIndex = Math.max(
+      0,
+      Math.min(activePanel + direction, panels.length - 1)
+    );
+
+    horizontalRef.current.scrollTo({
+      left: horizontalRef.current.clientWidth * nextIndex,
+      behavior: "smooth",
+    });
+  };
+
   return (
     <div className="hp_horizontalSite">
       <Head>
         <title>Kota Takahashi Portfolio</title>
       </Head>
       <Header />
+      <div className="hp_scrollGuides" aria-label="Page navigation">
+        {activePanel > 0 && (
+          <button
+            type="button"
+            className="hp_scrollGuide is_reverse"
+            onClick={() => handleGuideClick(-1)}
+            aria-label="Scroll back to the left"
+          >
+            <span className="hp_scrollGuide_label">Back</span>
+            <span className="hp_scrollGuide_arrow" aria-hidden="true"></span>
+          </button>
+        )}
+        {activePanel < panels.length - 1 && (
+          <button
+            type="button"
+            className="hp_scrollGuide"
+            onClick={() => handleGuideClick(1)}
+            aria-label="Scroll to the right"
+          >
+            <span className="hp_scrollGuide_label">Next</span>
+            <span className="hp_scrollGuide_arrow" aria-hidden="true"></span>
+          </button>
+        )}
+      </div>
       <main
         ref={horizontalRef}
         className="hp_horizontalPage hp_showcase"

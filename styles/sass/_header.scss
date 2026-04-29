@@ -27,12 +27,33 @@ body.is_menuOpen {
   position: relative;
   z-index: 102;
   display: flex;
-  width: 190px;
+  width: auto;
   pointer-events: auto;
+}
 
-  img {
-    width: 100%;
-  }
+.bl_header_logo_link {
+  display: inline-flex;
+  gap: 12px;
+  align-items: baseline;
+  color: $c_white;
+  text-decoration: none;
+}
+
+.bl_header_logo_mark {
+  font-family: $ff_en;
+  font-size: clamp(24px, 2vw, 32px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 0.04em;
+}
+
+.bl_header_logo_text {
+  font-family: $ff_editorial;
+  font-size: pxToRem(12);
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
 }
 
 .ly_header_inner {
@@ -183,7 +204,20 @@ body.is_menuOpen {
   }
 
   .bl_header_logo {
-    width: 150px;
+    width: auto;
+  }
+
+  .bl_header_logo_link {
+    gap: 8px;
+  }
+
+  .bl_header_logo_mark {
+    font-size: 22px;
+  }
+
+  .bl_header_logo_text {
+    font-size: pxToRem(10);
+    letter-spacing: 0.24em;
   }
 
   .bl_headerSpBtn {

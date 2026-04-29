@@ -8,18 +8,20 @@ const BlogCard = (props) => {
     let blogTitle = props.blogTitle;
     let blogDescription = props.blogDescription;
     return (
-        <div key={blogId} className="bl_blog_card_item">      
-            <figure className="bl_blog_card_imgWrapper">
-                {blogImg && <img src={blogImg} alt={blogTitle}></img>}
-            </figure>
-            <div className="bl_blog_card_body">
-                <p className="bl_blog_card_date">{blogDate}</p>
-                <Link className="bl_blog_card_title" href={`/blogs/${blogId}`}>{blogTitle}</Link>
-                <div className="bl_blog_card_text">
-                    <p>{blogDescription}</p>
+        <article key={blogId} className="bl_blog_card_item">
+            <Link className="bl_blog_card_link" href={`/blogs/${blogId}`}>
+                <figure className="bl_blog_card_imgWrapper">
+                    {blogImg && <img src={blogImg} alt={blogTitle}></img>}
+                </figure>
+                <div className="bl_blog_card_body">
+                    <p className="bl_blog_card_date">{blogDate}</p>
+                    <h3 className="bl_blog_card_title">{blogTitle}</h3>
+                    <div className="bl_blog_card_text">
+                        <p>{blogDescription}</p>
+                    </div>
                 </div>
-            </div>
-        </div>
+            </Link>
+        </article>
     )
 }
 
