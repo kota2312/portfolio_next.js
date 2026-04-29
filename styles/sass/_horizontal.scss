@@ -7,12 +7,13 @@
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(180deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    #050505;
+    rgba(5, 5, 5, 0.24);
   background-size: 96px 96px;
 }
 
 .hp_horizontalPage {
   position: relative;
+  z-index: 1;
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -31,7 +32,7 @@
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px),
     linear-gradient(180deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-    #050505;
+    rgba(5, 5, 5, 0.48);
   background-size: 96px 96px;
 }
 
@@ -60,9 +61,9 @@
     right: 4vw;
     bottom: 44px;
     z-index: -1;
-    font-family: $ff_en;
+    font-family: $ff_editorial;
     font-size: clamp(72px, 11vw, 176px);
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1;
     color: rgba(255, 255, 255, 0.05);
     letter-spacing: 0;
@@ -95,9 +96,10 @@
   }
 
   .el_hgroup_sub {
-    font-family: $ff_en;
+    font-family: $ff_editorial;
+    font-weight: 700;
     font-size: clamp(15px, 2vw, 24px);
-    letter-spacing: 0.32em;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
   }
 
@@ -136,13 +138,13 @@
   display: flex;
   gap: 10px;
   align-items: baseline;
-  font-family: $ff_en;
+  font-family: $ff_editorial;
   color: #f6f2ea;
   letter-spacing: 0;
 
   span:first-child {
     font-size: clamp(40px, 5vw, 84px);
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1;
   }
 
@@ -185,10 +187,11 @@
 
 .hp_showcase_label {
   margin-bottom: 26px;
-  font-family: $ff_en;
+  font-family: $ff_editorial;
   font-size: pxToRem(13);
+  font-weight: 700;
   color: rgba(246, 242, 234, 0.64);
-  letter-spacing: 0.42em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
 }
 
@@ -196,7 +199,7 @@
   margin-bottom: 30px;
   font-family: $ff_en;
   font-size: clamp(62px, 8vw, 150px);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 0.92;
   color: #f6f2ea;
   letter-spacing: 0;
@@ -216,11 +219,12 @@
   align-items: center;
   min-height: 44px;
   padding-right: 72px;
-  font-family: $ff_en;
+  font-family: $ff_editorial;
   font-size: pxToRem(13);
+  font-weight: 700;
   color: #f6f2ea;
   text-decoration: none;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 
   &::after {

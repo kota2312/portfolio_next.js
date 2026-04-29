@@ -1,0 +1,20 @@
+.app_spaceMotion {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 20% 16%, rgba(84, 112, 186, 0.18), transparent 30%),
+    radial-gradient(circle at 82% 28%, rgba(176, 88, 56, 0.12), transparent 24%),
+    linear-gradient(180deg, rgba(3, 6, 16, 0.2), rgba(0, 0, 0, 0.52));
+  opacity: 0.92;
+}
+
+.app_spaceMotion_canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: screen;
+  opacity: 0.9;
+}

@@ -7,7 +7,7 @@
   background:
     linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px),
     linear-gradient(180deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
-    #050505;
+    rgba(5, 5, 5, 0.48);
   background-size: 96px 96px;
 }
 
@@ -37,9 +37,9 @@
     right: 5vw;
     bottom: 52px;
     z-index: -1;
-    font-family: $ff_en;
+    font-family: $ff_editorial;
     font-size: clamp(78px, 14vw, 220px);
-    font-weight: 700;
+    font-weight: 800;
     line-height: 1;
     color: rgba(255, 255, 255, 0.045);
     letter-spacing: 0;
@@ -51,10 +51,11 @@
   position: absolute;
   top: 116px;
   left: 6vw;
-  font-family: $ff_en;
+  font-family: $ff_editorial;
   font-size: pxToRem(12);
+  font-weight: 700;
   color: rgba(255, 255, 255, 0.58);
-  letter-spacing: 0.36em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   writing-mode: vertical-rl;
 }
@@ -73,10 +74,11 @@
   }
 
   .el_hgroup_sub {
-    font-family: $ff_en;
+    font-family: $ff_editorial;
     font-size: clamp(14px, 1.8vw, 22px);
+    font-weight: 700;
     color: rgba(255, 255, 255, 0.7);
-    letter-spacing: 0.42em;
+    letter-spacing: 0.24em;
     text-transform: uppercase;
   }
 

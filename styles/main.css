@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Yomogi&display=swap");
 /* display
 ========================================================================== */
 /* width
@@ -1752,7 +1751,7 @@ ol {
 
 body {
   position: relative;
-  font-family: Yomogi, cursive;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
   font-weight: 400;
   line-height: 1.8;
   color: #36233d;
@@ -2257,10 +2256,11 @@ body.is_menuOpen {
 
 .bl_header_nav_label {
   margin-bottom: 24px;
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
   font-size: 0.8125rem;
+  font-weight: 700;
   color: rgba(255, 255, 255, 0.56);
-  letter-spacing: 0.42em;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
 }
 
@@ -2274,9 +2274,9 @@ body.is_menuOpen {
   display: inline-flex;
   align-items: center;
   min-height: 1.1em;
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
   font-size: clamp(36px, 7vw, 92px);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1;
   color: #fff;
   text-decoration: none;
@@ -2610,7 +2610,7 @@ body.is_menuOpen {
   position: relative;
 }
 .ly_mainVisual_inner .en {
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
 }
 @media screen and (max-width: 1560px) {
   .ly_mainVisual_inner {
@@ -3097,15 +3097,34 @@ video {
   transform: translate(-50%, -50%);
 }
 
+.app_spaceMotion {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  background: radial-gradient(circle at 20% 16%, rgba(84, 112, 186, 0.18), transparent 30%), radial-gradient(circle at 82% 28%, rgba(176, 88, 56, 0.12), transparent 24%), linear-gradient(180deg, rgba(3, 6, 16, 0.2), rgba(0, 0, 0, 0.52));
+  opacity: 0.92;
+}
+
+.app_spaceMotion_canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: screen;
+  opacity: 0.9;
+}
+
 .hp_horizontalSite {
   min-height: 100vh;
   color: #f4f4f1;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(180deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px), #050505;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(180deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px), rgba(5, 5, 5, 0.24);
   background-size: 96px 96px;
 }
 
 .hp_horizontalPage {
   position: relative;
+  z-index: 1;
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -3120,7 +3139,7 @@ video {
 }
 
 .hp_showcase {
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(180deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px), #050505;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.05) 1px, transparent 1px), linear-gradient(180deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px), rgba(5, 5, 5, 0.48);
   background-size: 96px 96px;
 }
 
@@ -3148,9 +3167,9 @@ video {
   right: 4vw;
   bottom: 44px;
   z-index: -1;
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
   font-size: clamp(72px, 11vw, 176px);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1;
   color: rgba(255, 255, 255, 0.05);
   letter-spacing: 0;
@@ -3179,9 +3198,10 @@ video {
   color: inherit;
 }
 .hp_panel .el_hgroup_sub {
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  font-weight: 700;
   font-size: clamp(15px, 2vw, 24px);
-  letter-spacing: 0.32em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
 }
 .hp_panel .el_lv2Heading {
@@ -3216,13 +3236,13 @@ video {
   display: flex;
   gap: 10px;
   align-items: baseline;
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
   color: #f6f2ea;
   letter-spacing: 0;
 }
 .hp_showcase_count span:first-child {
   font-size: clamp(40px, 5vw, 84px);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1;
 }
 .hp_showcase_count span:not(:first-child) {
@@ -3261,18 +3281,19 @@ video {
 
 .hp_showcase_label {
   margin-bottom: 26px;
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
   font-size: pxToRem(13);
+  font-weight: 700;
   color: rgba(246, 242, 234, 0.64);
-  letter-spacing: 0.42em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
 }
 
 .hp_showcase_title {
   margin-bottom: 30px;
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
   font-size: clamp(62px, 8vw, 150px);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 0.92;
   color: #f6f2ea;
   letter-spacing: 0;
@@ -3292,11 +3313,12 @@ video {
   align-items: center;
   min-height: 44px;
   padding-right: 72px;
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
   font-size: pxToRem(13);
+  font-weight: 700;
   color: #f6f2ea;
   text-decoration: none;
-  letter-spacing: 0.26em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 .hp_showcase_link::after {
@@ -3465,7 +3487,7 @@ video {
 .pg_editorial {
   min-height: 100vh;
   color: #f6f2ea;
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px), linear-gradient(180deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px), #050505;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.055) 1px, transparent 1px), linear-gradient(180deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px), rgba(5, 5, 5, 0.48);
   background-size: 96px 96px;
 }
 
@@ -3494,9 +3516,9 @@ video {
   right: 5vw;
   bottom: 52px;
   z-index: -1;
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
   font-size: clamp(78px, 14vw, 220px);
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1;
   color: rgba(255, 255, 255, 0.045);
   letter-spacing: 0;
@@ -3507,10 +3529,11 @@ video {
   position: absolute;
   top: 116px;
   left: 6vw;
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
   font-size: pxToRem(12);
+  font-weight: 700;
   color: rgba(255, 255, 255, 0.58);
-  letter-spacing: 0.36em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   writing-mode: vertical-rl;
 }
@@ -3528,10 +3551,11 @@ video {
   margin-bottom: 40px;
 }
 .pg_editorial_panel .el_hgroup_sub {
-  font-family: "Barlow Semi Condensed", sans-serif;
+  font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
   font-size: clamp(14px, 1.8vw, 22px);
+  font-weight: 700;
   color: rgba(255, 255, 255, 0.7);
-  letter-spacing: 0.42em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
 }
 .pg_editorial_panel .el_lv2Heading {
