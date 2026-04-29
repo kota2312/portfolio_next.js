@@ -30,24 +30,28 @@
     overflow: hidden;
     perspective: 600px;
     transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
-    border: 1px solid rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    background:
+        radial-gradient(circle at 88% 10%, rgba(214, 220, 232, 0.08), transparent 26%),
+        linear-gradient(180deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01)),
+        rgba(9, 10, 16, 0.98);
 
     &::before {
         position: absolute;
         top: 0;
         left: 0;
         width: 100%;
-        height: 3px;
+        height: 1px;
         content: "";
-        background: $c_red_1;
+        background: rgba(214, 220, 232, 0.72);
         transform: scaleX(0);
         transform-origin: left;
         transition: transform 0.35s ease;
     }
 
     @include FH() {
-        border-color: rgba(239, 7, 94, 0.35);
-        box-shadow: 0 24px 54px rgba(0, 0, 0, 0.14);
+        border-color: rgba(214, 220, 232, 0.3);
+        box-shadow: 0 24px 54px rgba(0, 0, 0, 0.24);
         transform: translateY(-6px);
 
         &::before {
@@ -56,17 +60,13 @@
 
         .bl_card_ttlLink,
         .bl_card_ttl {
-            color: $c_red_1;
-        }
-
-        .bl_card_imgWrapper > img {
-            transform: translateY(-50%) scale(1.04);
+            color: #fff;
         }
     }
 
     &_ttlLink {
         text-decoration: none;
-        color: $c_black;
+        color: #fff;
         &:before {
             content: "";
             inset: 0;
@@ -74,15 +74,16 @@
         }
     }
     &_ttl {
-        margin-bottom: 10px;
-        font-size: pxToRem(22);
+        margin-bottom: 2px;
+        font-size: pxToRem(28);
         font-weight: 700;
-        line-height: 1.25;
+        line-height: 1.16;
+        color: #fff;
     }
     &_txt {
         font-size: pxToRem(14);
         line-height: 1.8;
-        color: #5d5d5d;
+        color: rgba(246, 242, 234, 0.74);
     }
 }
 
@@ -94,8 +95,8 @@
     font-family: $ff_editorial;
     font-size: pxToRem(11);
     font-weight: 700;
-    color: rgba(0, 0, 0, 0.52);
-    letter-spacing: 0.16em;
+    color: rgba(246, 242, 234, 0.56);
+    letter-spacing: 0.18em;
     text-transform: uppercase;
 }
 
@@ -103,21 +104,38 @@
     position: relative;
     padding-top: 56.25%;
     overflow: hidden;
-    background: #111;
+    padding-right: 18px;
+    padding-bottom: 18px;
+    padding-left: 18px;
+    background: transparent;
+
+    &::before {
+        position: absolute;
+        top: 18px;
+        right: 18px;
+        left: 18px;
+        bottom: 18px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        content: "";
+    }
+
     > img {
         position: absolute;
-        top: 50%;
-        width: 100%;
-        height: 100%;
+        top: 18px;
+        left: 18px;
+        width: calc(100% - 36px);
+        height: calc(100% - 36px);
         object-fit: cover;
-        transition: transform 0.45s ease;
-        transform: translateY(-50%) scale(1.01);
+        transition: none;
+        transform: none;
     }
 }
 
 .bl_card_body {
+    display: grid;
+    gap: 14px;
     padding: 22px 22px 24px;
-    background-color: $c_white;
+    background: transparent;
 
     > *:last-child {
         margin-bottom: 0;
@@ -137,6 +155,12 @@
         > .bl_blog_card_item {
             width: 100%;
             margin-right: 0;
+        }
+    }
+
+    .bl_card {
+        &_ttl {
+            font-size: pxToRem(24);
         }
     }
 

@@ -92,8 +92,23 @@
     font-family: $ff_editorial;
     font-size: pxToRem(12);
     font-weight: 700;
+    color: #111;
     letter-spacing: 0.18em;
     text-transform: uppercase;
     background: #f6f2ea;
     border: 0;
+
+    &::before {
+        background-color: #111;
+    }
+
+    @include FH() {
+        color: #f6f2ea;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.24);
+
+        &::before {
+            background-color: #f6f2ea;
+        }
+    }
 }

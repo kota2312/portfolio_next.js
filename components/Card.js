@@ -6,12 +6,12 @@ export default function CardList({ sectionId }) {
         certification: [
             {
                 img: "/img/top/certification/lv1.png",
-                ttl: "HTML5プロフェッショナル認定 レベル1",
+                ttl: "HTML5プロフェッショナル認定レベル1",
                 url: "https://html5exam.jp/",
             },
             {
                 img: "/img/top/certification/sa-csm-600.png",
-                ttl: "Certified ScrumMaster®（CSM®）",
+                ttl: "Certified ScrumMaster",
                 url: "https://abi-agile.com/lp/csm/",
             },
         ],
@@ -40,6 +40,10 @@ export default function CardList({ sectionId }) {
     ];
 
     const contentList = contentMap[sectionId] || defaultContent;
+    const labelMap = {
+        certification: "Record / Jupiter",
+    };
+    const cardLabel = labelMap[sectionId] || "Archive";
 
     return (
         <div className="bl_cardUnit bl_cardUnit__col4">
@@ -49,7 +53,10 @@ export default function CardList({ sectionId }) {
                         <img src={content.img} alt={content.ttl} />
                     </figure>
                     <div className="bl_card_body">
-                        {/* タイトル部分のみリンク化 */}
+                        <div className="bl_card_meta">
+                            <span>{cardLabel}</span>
+                            <span>{String(index + 1).padStart(2, "0")}</span>
+                        </div>
                         {content.url ? (
                             content.url.startsWith("http") ? (
                                 <Link
@@ -68,7 +75,6 @@ export default function CardList({ sectionId }) {
                         ) : (
                             <h3 className="bl_card_ttl">{content.ttl}</h3>
                         )}
-                        {/* テキストがあれば表示 */}
                         {content.txt ? <p className="bl_card_txt">{content.txt}</p> : null}
                     </div>
                 </div>

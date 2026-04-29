@@ -155,8 +155,7 @@
     }
   }
 
-  .bl_media,
-  .bl_card {
+  .bl_media {
     color: #1d1d1d;
     background: rgba(246, 242, 234, 0.98);
     border: 1px solid rgba(255, 255, 255, 0.24);
@@ -164,20 +163,13 @@
     box-shadow: none;
   }
 
-  .bl_media_body,
-  .bl_card_body {
+  .bl_media_body {
     background: transparent;
   }
 
   .bl_media_ttl,
-  .bl_card_ttl,
-  .bl_card_txt,
   .bl_media_txt {
     color: #242424;
-  }
-
-  .bl_card_ttlLink {
-    color: #161616;
   }
 
   .bl_tabNav_link {
