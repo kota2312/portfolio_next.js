@@ -35,11 +35,6 @@
 
 @include MQ(m) {
   .ly_footer {
-    right: 16px;
-    bottom: 16px;
-  }
-
-  .bl_footer_info_logo {
-    width: 98px;
+    display: none;
   }
 }

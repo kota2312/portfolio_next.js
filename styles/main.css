@@ -3319,13 +3319,14 @@ video {
   position: relative;
   z-index: 1;
   display: flex;
-  width: 100vw;
+  width: 100%;
   height: 100vh;
   overflow-x: auto;
   overflow-y: hidden;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
   scrollbar-width: none;
+  box-sizing: border-box;
 }
 .hp_horizontalPage::-webkit-scrollbar {
   display: none;
@@ -3426,6 +3427,7 @@ video {
   min-width: 100vw;
   min-height: 100vh;
   padding: 110px 6vw 72px;
+  box-sizing: border-box;
   place-items: center;
   scroll-snap-align: start;
   isolation: isolate;
@@ -3771,12 +3773,16 @@ video {
     display: none;
   }
   .hp_horizontalPage {
+    width: 100%;
+    height: 100svh;
     -webkit-overflow-scrolling: touch;
     overscroll-behavior-x: contain;
     touch-action: pan-x;
   }
   .hp_showcase_panel {
     display: grid;
+    flex: 0 0 100%;
+    min-width: 100%;
     grid-template-columns: 1fr;
     gap: 28px;
     min-height: 100svh;
@@ -4099,11 +4105,7 @@ video {
 
 @media screen and (max-width: 768px) {
   .ly_footer {
-    right: 16px;
-    bottom: 16px;
-  }
-  .bl_footer_info_logo {
-    width: 98px;
+    display: none;
   }
 }
 .bl_blog_detail {
