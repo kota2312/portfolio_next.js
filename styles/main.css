@@ -2709,9 +2709,9 @@ body.is_menuOpen {
 }
 .bl_card_ttl {
   margin-bottom: 2px;
-  font-size: 1.75rem;
+  font-size: 1.375rem;
   font-weight: 700;
-  line-height: 1.16;
+  line-height: 1.24;
   color: #fff;
 }
 .bl_card_txt {
@@ -2786,7 +2786,7 @@ body.is_menuOpen {
     margin-right: 0;
   }
   .bl_card_ttl {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 }
 .bl_mainVisual {

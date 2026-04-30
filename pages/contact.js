@@ -18,7 +18,6 @@ export default function Contact() {
             <Heading sectionId="contact" />
             <div className="bl_contactEditorial">
               <div className="bl_contactEditorial_intro">
-                <p className="bl_editorialHero_kicker">Open line</p>
                 <h3 className="bl_contactEditorial_title">Let&apos;s build something clear and useful.</h3>
                 <p className="bl_contactEditorial_text">
                   Web制作、運用改善、フロントエンド実装のご相談を受け付けています。

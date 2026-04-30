@@ -7,11 +7,13 @@ export default function CardList({ sectionId }) {
             {
                 img: "/img/top/certification/lv1.png",
                 ttl: "HTML5プロフェッショナル認定レベル1",
+                txt: "HTML/CSS/JavaScriptの基礎理解を前提に、Web標準を意識したマークアップや実装を進められます。",
                 url: "https://html5exam.jp/",
             },
             {
                 img: "/img/top/certification/sa-csm-600.png",
                 ttl: "Certified ScrumMaster",
+                txt: "チーム進行や対話設計を意識しながら、要件整理・開発フロー改善・継続的な進行支援に活かせます。",
                 url: "https://abi-agile.com/lp/csm/",
             },
         ],
